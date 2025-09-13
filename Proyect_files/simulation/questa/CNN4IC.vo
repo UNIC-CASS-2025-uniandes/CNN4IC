@@ -1,0 +1,138 @@
+// Copyright (C) 2025  Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus Prime License Agreement,
+// the Altera IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Altera and sold by Altera or its authorized distributors.  Please
+// refer to the Altera Software License Subscription Agreements 
+// on the Quartus Prime software download page.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition"
+
+// DATE "09/12/2025 22:48:50"
+
+// 
+// Device: Altera 5CGXFC9E7F35C8 Package FBGA1152
+// 
+
+// 
+// This Verilog file should be used for Questa Intel FPGA (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module CNN4IC (
+	CNN4IC_data_OutBUS,
+	CNN4IC_CLOCK_50,
+	CNN4IC_RESET_InHigh,
+	CNN4IC_data_InBUS);
+output 	CNN4IC_data_OutBUS;
+input 	CNN4IC_CLOCK_50;
+input 	CNN4IC_RESET_InHigh;
+input 	CNN4IC_data_InBUS;
+
+// Design Ports Information
+// CNN4IC_data_OutBUS	=>  Location: PIN_Y29,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// CNN4IC_CLOCK_50	=>  Location: PIN_AA32,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// CNN4IC_RESET_InHigh	=>  Location: PIN_AC29,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// CNN4IC_data_InBUS	=>  Location: PIN_Y30,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \CNN4IC_CLOCK_50~input_o ;
+wire \CNN4IC_RESET_InHigh~input_o ;
+wire \~QUARTUS_CREATED_GND~I_combout ;
+wire \CNN4IC_data_InBUS~input_o ;
+
+
+// Location: IOOBUF_X121_Y39_N5
+cyclonev_io_obuf \CNN4IC_data_OutBUS~output (
+	.i(!\CNN4IC_data_InBUS~input_o ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(CNN4IC_data_OutBUS),
+	.obar());
+// synopsys translate_off
+defparam \CNN4IC_data_OutBUS~output .bus_hold = "false";
+defparam \CNN4IC_data_OutBUS~output .open_drain_output = "false";
+defparam \CNN4IC_data_OutBUS~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X121_Y39_N21
+cyclonev_io_ibuf \CNN4IC_data_InBUS~input (
+	.i(CNN4IC_data_InBUS),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\CNN4IC_data_InBUS~input_o ));
+// synopsys translate_off
+defparam \CNN4IC_data_InBUS~input .bus_hold = "false";
+defparam \CNN4IC_data_InBUS~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X121_Y36_N44
+cyclonev_io_ibuf \CNN4IC_CLOCK_50~input (
+	.i(CNN4IC_CLOCK_50),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\CNN4IC_CLOCK_50~input_o ));
+// synopsys translate_off
+defparam \CNN4IC_CLOCK_50~input .bus_hold = "false";
+defparam \CNN4IC_CLOCK_50~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X121_Y17_N55
+cyclonev_io_ibuf \CNN4IC_RESET_InHigh~input (
+	.i(CNN4IC_RESET_InHigh),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\CNN4IC_RESET_InHigh~input_o ));
+// synopsys translate_off
+defparam \CNN4IC_RESET_InHigh~input .bus_hold = "false";
+defparam \CNN4IC_RESET_InHigh~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: MLABCELL_X109_Y98_N3
+cyclonev_lcell_comb \~QUARTUS_CREATED_GND~I (
+// Equation(s):
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\~QUARTUS_CREATED_GND~I_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \~QUARTUS_CREATED_GND~I .extended_lut = "off";
+defparam \~QUARTUS_CREATED_GND~I .lut_mask = 64'h0000000000000000;
+defparam \~QUARTUS_CREATED_GND~I .shared_arith = "off";
+// synopsys translate_on
+
+endmodule

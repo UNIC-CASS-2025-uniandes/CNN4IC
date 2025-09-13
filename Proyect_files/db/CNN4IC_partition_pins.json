@@ -1,0 +1,17 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "CNN4IC_data_OutBUS",
+					"strict" : false
+				},
+				{
+					"name" : "CNN4IC_data_InBUS",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
