@@ -1,6 +1,8 @@
 # CNN4IC
 Convolutional Neural Network (CNN) for Image Classification
 
+_Project still in development_
+
 #### Created by:
 
 - Jacobo Morales Erazo
