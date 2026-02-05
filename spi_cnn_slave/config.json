@@ -1,0 +1,16 @@
+{
+    "meta": {
+        "version": 3,
+        "flow": "Classic",
+        "substituting_steps": {
+            "KLayout.DRC": null,
+            "Magic.DRC": null
+        }
+    },
+
+    "DESIGN_NAME": "spi_cnn_slave",
+    "VERILOG_FILES": "dir::src/*.v",
+
+    "CLOCK_PORT": "i_SPI_Clk",
+    "CLOCK_PERIOD": 10
+}
