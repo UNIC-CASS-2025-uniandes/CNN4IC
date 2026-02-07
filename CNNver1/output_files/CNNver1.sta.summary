@@ -1,0 +1,53 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 125C Model Setup 'CNNver1_SPICLOCK_50'
+Slack : -1.209
+TNS   : -12.721
+
+Type  : Slow 1100mV 125C Model Hold 'CNNver1_SPICLOCK_50'
+Slack : 0.270
+TNS   : 0.000
+
+Type  : Slow 1100mV 125C Model Minimum Pulse Width 'CNNver1_SPICLOCK_50'
+Slack : -0.538
+TNS   : -11.527
+
+Type  : Slow 1100mV -40C Model Setup 'CNNver1_SPICLOCK_50'
+Slack : -1.359
+TNS   : -14.731
+
+Type  : Slow 1100mV -40C Model Hold 'CNNver1_SPICLOCK_50'
+Slack : 0.255
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'CNNver1_SPICLOCK_50'
+Slack : -0.538
+TNS   : -12.601
+
+Type  : Fast 1100mV 125C Model Setup 'CNNver1_SPICLOCK_50'
+Slack : -0.039
+TNS   : -0.097
+
+Type  : Fast 1100mV 125C Model Hold 'CNNver1_SPICLOCK_50'
+Slack : 0.146
+TNS   : 0.000
+
+Type  : Fast 1100mV 125C Model Minimum Pulse Width 'CNNver1_SPICLOCK_50'
+Slack : -0.081
+TNS   : -1.194
+
+Type  : Fast 1100mV -40C Model Setup 'CNNver1_SPICLOCK_50'
+Slack : 0.039
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'CNNver1_SPICLOCK_50'
+Slack : 0.125
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'CNNver1_SPICLOCK_50'
+Slack : -0.089
+TNS   : -1.324
+
+------------------------------------------------------------

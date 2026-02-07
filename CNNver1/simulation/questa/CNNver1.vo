@@ -1,0 +1,837 @@
+// Copyright (C) 2025  Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus Prime License Agreement,
+// the Altera IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Altera and sold by Altera or its authorized distributors.  Please
+// refer to the Altera Software License Subscription Agreements 
+// on the Quartus Prime software download page.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition"
+
+// DATE "02/06/2026 12:57:51"
+
+// 
+// Device: Altera 5CEBA2F17A7 Package FBGA256
+// 
+
+// 
+// This Verilog file should be used for Questa Intel FPGA (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module CNNver1 (
+	CNNver1_MISO,
+	CNNver1_SPICLOCK_50,
+	CNNver1_SS_N,
+	CNNver1_MOSI);
+output 	CNNver1_MISO;
+input 	CNNver1_SPICLOCK_50;
+input 	CNNver1_SS_N;
+input 	CNNver1_MOSI;
+
+// Design Ports Information
+// CNNver1_MISO	=>  Location: PIN_G2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// CNNver1_SPICLOCK_50	=>  Location: PIN_F12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// CNNver1_SS_N	=>  Location: PIN_G1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// CNNver1_MOSI	=>  Location: PIN_J2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \~QUARTUS_CREATED_GND~I_combout ;
+wire \CNNver1_SPICLOCK_50~input_o ;
+wire \CNNver1_SPICLOCK_50~inputCLKENA0_outclk ;
+wire \spi_cnn_slave_8_u0|bit_count[0]~0_combout ;
+wire \CNNver1_SS_N~input_o ;
+wire \spi_cnn_slave_8_u0|Add0~21_sumout ;
+wire \spi_cnn_slave_8_u0|Add0~22 ;
+wire \spi_cnn_slave_8_u0|Add0~17_sumout ;
+wire \spi_cnn_slave_8_u0|Add0~18 ;
+wire \spi_cnn_slave_8_u0|Add0~13_sumout ;
+wire \spi_cnn_slave_8_u0|Add0~14 ;
+wire \spi_cnn_slave_8_u0|Add0~9_sumout ;
+wire \spi_cnn_slave_8_u0|Add0~10 ;
+wire \spi_cnn_slave_8_u0|Add0~5_sumout ;
+wire \spi_cnn_slave_8_u0|Add0~6 ;
+wire \spi_cnn_slave_8_u0|Add0~1_sumout ;
+wire \spi_cnn_slave_8_u0|cmd[1]~0_combout ;
+wire \CNNver1_MOSI~input_o ;
+wire \spi_cnn_slave_8_u0|bit_count[0]~DUPLICATE_q ;
+wire \spi_cnn_slave_8_u0|cmd[0]~2_combout ;
+wire \spi_cnn_slave_8_u0|cmd[1]~1_combout ;
+wire \spi_cnn_slave_8_u0|miso_count[1]~0_combout ;
+wire \spi_cnn_slave_8_u0|miso_count[2]~2_combout ;
+wire \spi_cnn_slave_8_u0|miso_count[0]~1_combout ;
+wire \spi_cnn_slave_8_u0|miso_count[0]~DUPLICATE_q ;
+wire \spi_cnn_slave_8_u0|Mux0~0_combout ;
+wire \spi_cnn_slave_8_u0|miso_active~0_combout ;
+wire \spi_cnn_slave_8_u0|miso_active~q ;
+wire [2:0] \spi_cnn_slave_8_u0|miso_count ;
+wire [1:0] \spi_cnn_slave_8_u0|cmd ;
+wire [6:0] \spi_cnn_slave_8_u0|bit_count ;
+
+
+// Location: IOOBUF_X0_Y19_N39
+cyclonev_io_obuf \CNNver1_MISO~output (
+	.i(\spi_cnn_slave_8_u0|Mux0~0_combout ),
+	.oe(\spi_cnn_slave_8_u0|miso_active~q ),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(CNNver1_MISO),
+	.obar());
+// synopsys translate_off
+defparam \CNNver1_MISO~output .bus_hold = "false";
+defparam \CNNver1_MISO~output .open_drain_output = "false";
+defparam \CNNver1_MISO~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X54_Y18_N44
+cyclonev_io_ibuf \CNNver1_SPICLOCK_50~input (
+	.i(CNNver1_SPICLOCK_50),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\CNNver1_SPICLOCK_50~input_o ));
+// synopsys translate_off
+defparam \CNNver1_SPICLOCK_50~input .bus_hold = "false";
+defparam \CNNver1_SPICLOCK_50~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: CLKCTRL_G10
+cyclonev_clkena \CNNver1_SPICLOCK_50~inputCLKENA0 (
+	.inclk(\CNNver1_SPICLOCK_50~input_o ),
+	.ena(vcc),
+	.outclk(\CNNver1_SPICLOCK_50~inputCLKENA0_outclk ),
+	.enaout());
+// synopsys translate_off
+defparam \CNNver1_SPICLOCK_50~inputCLKENA0 .clock_type = "global clock";
+defparam \CNNver1_SPICLOCK_50~inputCLKENA0 .disable_mode = "low";
+defparam \CNNver1_SPICLOCK_50~inputCLKENA0 .ena_register_mode = "always enabled";
+defparam \CNNver1_SPICLOCK_50~inputCLKENA0 .ena_register_power_up = "high";
+defparam \CNNver1_SPICLOCK_50~inputCLKENA0 .test_syn = "high";
+// synopsys translate_on
+
+// Location: LABCELL_X1_Y19_N18
+cyclonev_lcell_comb \spi_cnn_slave_8_u0|bit_count[0]~0 (
+// Equation(s):
+// \spi_cnn_slave_8_u0|bit_count[0]~0_combout  = ( !\spi_cnn_slave_8_u0|bit_count [0] )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(!\spi_cnn_slave_8_u0|bit_count [0]),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\spi_cnn_slave_8_u0|bit_count[0]~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|bit_count[0]~0 .extended_lut = "off";
+defparam \spi_cnn_slave_8_u0|bit_count[0]~0 .lut_mask = 64'hFFFF0000FFFF0000;
+defparam \spi_cnn_slave_8_u0|bit_count[0]~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y19_N55
+cyclonev_io_ibuf \CNNver1_SS_N~input (
+	.i(CNNver1_SS_N),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\CNNver1_SS_N~input_o ));
+// synopsys translate_off
+defparam \CNNver1_SS_N~input .bus_hold = "false";
+defparam \CNNver1_SS_N~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: FF_X1_Y19_N20
+dffeas \spi_cnn_slave_8_u0|bit_count[0] (
+	.clk(\CNNver1_SPICLOCK_50~inputCLKENA0_outclk ),
+	.d(\spi_cnn_slave_8_u0|bit_count[0]~0_combout ),
+	.asdata(vcc),
+	.clrn(!\CNNver1_SS_N~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\spi_cnn_slave_8_u0|bit_count [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|bit_count[0] .is_wysiwyg = "true";
+defparam \spi_cnn_slave_8_u0|bit_count[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X1_Y19_N30
+cyclonev_lcell_comb \spi_cnn_slave_8_u0|Add0~21 (
+// Equation(s):
+// \spi_cnn_slave_8_u0|Add0~21_sumout  = SUM(( \spi_cnn_slave_8_u0|bit_count [1] ) + ( \spi_cnn_slave_8_u0|bit_count [0] ) + ( !VCC ))
+// \spi_cnn_slave_8_u0|Add0~22  = CARRY(( \spi_cnn_slave_8_u0|bit_count [1] ) + ( \spi_cnn_slave_8_u0|bit_count [0] ) + ( !VCC ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\spi_cnn_slave_8_u0|bit_count [0]),
+	.datad(!\spi_cnn_slave_8_u0|bit_count [1]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\spi_cnn_slave_8_u0|Add0~21_sumout ),
+	.cout(\spi_cnn_slave_8_u0|Add0~22 ),
+	.shareout());
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|Add0~21 .extended_lut = "off";
+defparam \spi_cnn_slave_8_u0|Add0~21 .lut_mask = 64'h0000F0F0000000FF;
+defparam \spi_cnn_slave_8_u0|Add0~21 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X1_Y19_N32
+dffeas \spi_cnn_slave_8_u0|bit_count[1] (
+	.clk(\CNNver1_SPICLOCK_50~inputCLKENA0_outclk ),
+	.d(\spi_cnn_slave_8_u0|Add0~21_sumout ),
+	.asdata(vcc),
+	.clrn(!\CNNver1_SS_N~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\spi_cnn_slave_8_u0|bit_count [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|bit_count[1] .is_wysiwyg = "true";
+defparam \spi_cnn_slave_8_u0|bit_count[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X1_Y19_N33
+cyclonev_lcell_comb \spi_cnn_slave_8_u0|Add0~17 (
+// Equation(s):
+// \spi_cnn_slave_8_u0|Add0~17_sumout  = SUM(( \spi_cnn_slave_8_u0|bit_count [2] ) + ( GND ) + ( \spi_cnn_slave_8_u0|Add0~22  ))
+// \spi_cnn_slave_8_u0|Add0~18  = CARRY(( \spi_cnn_slave_8_u0|bit_count [2] ) + ( GND ) + ( \spi_cnn_slave_8_u0|Add0~22  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\spi_cnn_slave_8_u0|bit_count [2]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\spi_cnn_slave_8_u0|Add0~22 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\spi_cnn_slave_8_u0|Add0~17_sumout ),
+	.cout(\spi_cnn_slave_8_u0|Add0~18 ),
+	.shareout());
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|Add0~17 .extended_lut = "off";
+defparam \spi_cnn_slave_8_u0|Add0~17 .lut_mask = 64'h0000FFFF000000FF;
+defparam \spi_cnn_slave_8_u0|Add0~17 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X1_Y19_N35
+dffeas \spi_cnn_slave_8_u0|bit_count[2] (
+	.clk(\CNNver1_SPICLOCK_50~inputCLKENA0_outclk ),
+	.d(\spi_cnn_slave_8_u0|Add0~17_sumout ),
+	.asdata(vcc),
+	.clrn(!\CNNver1_SS_N~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\spi_cnn_slave_8_u0|bit_count [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|bit_count[2] .is_wysiwyg = "true";
+defparam \spi_cnn_slave_8_u0|bit_count[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X1_Y19_N36
+cyclonev_lcell_comb \spi_cnn_slave_8_u0|Add0~13 (
+// Equation(s):
+// \spi_cnn_slave_8_u0|Add0~13_sumout  = SUM(( \spi_cnn_slave_8_u0|bit_count [3] ) + ( GND ) + ( \spi_cnn_slave_8_u0|Add0~18  ))
+// \spi_cnn_slave_8_u0|Add0~14  = CARRY(( \spi_cnn_slave_8_u0|bit_count [3] ) + ( GND ) + ( \spi_cnn_slave_8_u0|Add0~18  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\spi_cnn_slave_8_u0|bit_count [3]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\spi_cnn_slave_8_u0|Add0~18 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\spi_cnn_slave_8_u0|Add0~13_sumout ),
+	.cout(\spi_cnn_slave_8_u0|Add0~14 ),
+	.shareout());
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|Add0~13 .extended_lut = "off";
+defparam \spi_cnn_slave_8_u0|Add0~13 .lut_mask = 64'h0000FFFF000000FF;
+defparam \spi_cnn_slave_8_u0|Add0~13 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X1_Y19_N38
+dffeas \spi_cnn_slave_8_u0|bit_count[3] (
+	.clk(\CNNver1_SPICLOCK_50~inputCLKENA0_outclk ),
+	.d(\spi_cnn_slave_8_u0|Add0~13_sumout ),
+	.asdata(vcc),
+	.clrn(!\CNNver1_SS_N~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\spi_cnn_slave_8_u0|bit_count [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|bit_count[3] .is_wysiwyg = "true";
+defparam \spi_cnn_slave_8_u0|bit_count[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X1_Y19_N39
+cyclonev_lcell_comb \spi_cnn_slave_8_u0|Add0~9 (
+// Equation(s):
+// \spi_cnn_slave_8_u0|Add0~9_sumout  = SUM(( \spi_cnn_slave_8_u0|bit_count [4] ) + ( GND ) + ( \spi_cnn_slave_8_u0|Add0~14  ))
+// \spi_cnn_slave_8_u0|Add0~10  = CARRY(( \spi_cnn_slave_8_u0|bit_count [4] ) + ( GND ) + ( \spi_cnn_slave_8_u0|Add0~14  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\spi_cnn_slave_8_u0|bit_count [4]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\spi_cnn_slave_8_u0|Add0~14 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\spi_cnn_slave_8_u0|Add0~9_sumout ),
+	.cout(\spi_cnn_slave_8_u0|Add0~10 ),
+	.shareout());
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|Add0~9 .extended_lut = "off";
+defparam \spi_cnn_slave_8_u0|Add0~9 .lut_mask = 64'h0000FFFF000000FF;
+defparam \spi_cnn_slave_8_u0|Add0~9 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X1_Y19_N41
+dffeas \spi_cnn_slave_8_u0|bit_count[4] (
+	.clk(\CNNver1_SPICLOCK_50~inputCLKENA0_outclk ),
+	.d(\spi_cnn_slave_8_u0|Add0~9_sumout ),
+	.asdata(vcc),
+	.clrn(!\CNNver1_SS_N~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\spi_cnn_slave_8_u0|bit_count [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|bit_count[4] .is_wysiwyg = "true";
+defparam \spi_cnn_slave_8_u0|bit_count[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X1_Y19_N42
+cyclonev_lcell_comb \spi_cnn_slave_8_u0|Add0~5 (
+// Equation(s):
+// \spi_cnn_slave_8_u0|Add0~5_sumout  = SUM(( \spi_cnn_slave_8_u0|bit_count [5] ) + ( GND ) + ( \spi_cnn_slave_8_u0|Add0~10  ))
+// \spi_cnn_slave_8_u0|Add0~6  = CARRY(( \spi_cnn_slave_8_u0|bit_count [5] ) + ( GND ) + ( \spi_cnn_slave_8_u0|Add0~10  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\spi_cnn_slave_8_u0|bit_count [5]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\spi_cnn_slave_8_u0|Add0~10 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\spi_cnn_slave_8_u0|Add0~5_sumout ),
+	.cout(\spi_cnn_slave_8_u0|Add0~6 ),
+	.shareout());
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|Add0~5 .extended_lut = "off";
+defparam \spi_cnn_slave_8_u0|Add0~5 .lut_mask = 64'h0000FFFF000000FF;
+defparam \spi_cnn_slave_8_u0|Add0~5 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X1_Y19_N44
+dffeas \spi_cnn_slave_8_u0|bit_count[5] (
+	.clk(\CNNver1_SPICLOCK_50~inputCLKENA0_outclk ),
+	.d(\spi_cnn_slave_8_u0|Add0~5_sumout ),
+	.asdata(vcc),
+	.clrn(!\CNNver1_SS_N~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\spi_cnn_slave_8_u0|bit_count [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|bit_count[5] .is_wysiwyg = "true";
+defparam \spi_cnn_slave_8_u0|bit_count[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X1_Y19_N45
+cyclonev_lcell_comb \spi_cnn_slave_8_u0|Add0~1 (
+// Equation(s):
+// \spi_cnn_slave_8_u0|Add0~1_sumout  = SUM(( \spi_cnn_slave_8_u0|bit_count [6] ) + ( GND ) + ( \spi_cnn_slave_8_u0|Add0~6  ))
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\spi_cnn_slave_8_u0|bit_count [6]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\spi_cnn_slave_8_u0|Add0~6 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\spi_cnn_slave_8_u0|Add0~1_sumout ),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|Add0~1 .extended_lut = "off";
+defparam \spi_cnn_slave_8_u0|Add0~1 .lut_mask = 64'h0000FFFF000000FF;
+defparam \spi_cnn_slave_8_u0|Add0~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X1_Y19_N47
+dffeas \spi_cnn_slave_8_u0|bit_count[6] (
+	.clk(\CNNver1_SPICLOCK_50~inputCLKENA0_outclk ),
+	.d(\spi_cnn_slave_8_u0|Add0~1_sumout ),
+	.asdata(vcc),
+	.clrn(!\CNNver1_SS_N~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\spi_cnn_slave_8_u0|bit_count [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|bit_count[6] .is_wysiwyg = "true";
+defparam \spi_cnn_slave_8_u0|bit_count[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X1_Y19_N24
+cyclonev_lcell_comb \spi_cnn_slave_8_u0|cmd[1]~0 (
+// Equation(s):
+// \spi_cnn_slave_8_u0|cmd[1]~0_combout  = ( !\spi_cnn_slave_8_u0|bit_count [6] & ( !\spi_cnn_slave_8_u0|bit_count [5] & ( (!\spi_cnn_slave_8_u0|bit_count [3] & (!\spi_cnn_slave_8_u0|bit_count [4] & (!\spi_cnn_slave_8_u0|bit_count [2] & 
+// !\spi_cnn_slave_8_u0|bit_count [1]))) ) ) )
+
+	.dataa(!\spi_cnn_slave_8_u0|bit_count [3]),
+	.datab(!\spi_cnn_slave_8_u0|bit_count [4]),
+	.datac(!\spi_cnn_slave_8_u0|bit_count [2]),
+	.datad(!\spi_cnn_slave_8_u0|bit_count [1]),
+	.datae(!\spi_cnn_slave_8_u0|bit_count [6]),
+	.dataf(!\spi_cnn_slave_8_u0|bit_count [5]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\spi_cnn_slave_8_u0|cmd[1]~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|cmd[1]~0 .extended_lut = "off";
+defparam \spi_cnn_slave_8_u0|cmd[1]~0 .lut_mask = 64'h8000000000000000;
+defparam \spi_cnn_slave_8_u0|cmd[1]~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y19_N21
+cyclonev_io_ibuf \CNNver1_MOSI~input (
+	.i(CNNver1_MOSI),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\CNNver1_MOSI~input_o ));
+// synopsys translate_off
+defparam \CNNver1_MOSI~input .bus_hold = "false";
+defparam \CNNver1_MOSI~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: FF_X1_Y19_N19
+dffeas \spi_cnn_slave_8_u0|bit_count[0]~DUPLICATE (
+	.clk(\CNNver1_SPICLOCK_50~inputCLKENA0_outclk ),
+	.d(\spi_cnn_slave_8_u0|bit_count[0]~0_combout ),
+	.asdata(vcc),
+	.clrn(!\CNNver1_SS_N~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\spi_cnn_slave_8_u0|bit_count[0]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|bit_count[0]~DUPLICATE .is_wysiwyg = "true";
+defparam \spi_cnn_slave_8_u0|bit_count[0]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X1_Y19_N15
+cyclonev_lcell_comb \spi_cnn_slave_8_u0|cmd[0]~2 (
+// Equation(s):
+// \spi_cnn_slave_8_u0|cmd[0]~2_combout  = ( \spi_cnn_slave_8_u0|cmd [0] & ( \spi_cnn_slave_8_u0|cmd[1]~0_combout  & ( (!\spi_cnn_slave_8_u0|bit_count[0]~DUPLICATE_q ) # (\CNNver1_MOSI~input_o ) ) ) ) # ( !\spi_cnn_slave_8_u0|cmd [0] & ( 
+// \spi_cnn_slave_8_u0|cmd[1]~0_combout  & ( (\CNNver1_MOSI~input_o  & \spi_cnn_slave_8_u0|bit_count[0]~DUPLICATE_q ) ) ) ) # ( \spi_cnn_slave_8_u0|cmd [0] & ( !\spi_cnn_slave_8_u0|cmd[1]~0_combout  ) )
+
+	.dataa(gnd),
+	.datab(!\CNNver1_MOSI~input_o ),
+	.datac(!\spi_cnn_slave_8_u0|bit_count[0]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(!\spi_cnn_slave_8_u0|cmd [0]),
+	.dataf(!\spi_cnn_slave_8_u0|cmd[1]~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\spi_cnn_slave_8_u0|cmd[0]~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|cmd[0]~2 .extended_lut = "off";
+defparam \spi_cnn_slave_8_u0|cmd[0]~2 .lut_mask = 64'h0000FFFF0303F3F3;
+defparam \spi_cnn_slave_8_u0|cmd[0]~2 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X1_Y19_N17
+dffeas \spi_cnn_slave_8_u0|cmd[0] (
+	.clk(\CNNver1_SPICLOCK_50~inputCLKENA0_outclk ),
+	.d(\spi_cnn_slave_8_u0|cmd[0]~2_combout ),
+	.asdata(vcc),
+	.clrn(!\CNNver1_SS_N~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\spi_cnn_slave_8_u0|cmd [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|cmd[0] .is_wysiwyg = "true";
+defparam \spi_cnn_slave_8_u0|cmd[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X1_Y19_N54
+cyclonev_lcell_comb \spi_cnn_slave_8_u0|cmd[1]~1 (
+// Equation(s):
+// \spi_cnn_slave_8_u0|cmd[1]~1_combout  = ( \spi_cnn_slave_8_u0|cmd[1]~0_combout  & ( (!\spi_cnn_slave_8_u0|bit_count[0]~DUPLICATE_q  & (\CNNver1_MOSI~input_o )) # (\spi_cnn_slave_8_u0|bit_count[0]~DUPLICATE_q  & ((\spi_cnn_slave_8_u0|cmd [1]))) ) ) # ( 
+// !\spi_cnn_slave_8_u0|cmd[1]~0_combout  & ( \spi_cnn_slave_8_u0|cmd [1] ) )
+
+	.dataa(gnd),
+	.datab(!\spi_cnn_slave_8_u0|bit_count[0]~DUPLICATE_q ),
+	.datac(!\CNNver1_MOSI~input_o ),
+	.datad(!\spi_cnn_slave_8_u0|cmd [1]),
+	.datae(gnd),
+	.dataf(!\spi_cnn_slave_8_u0|cmd[1]~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\spi_cnn_slave_8_u0|cmd[1]~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|cmd[1]~1 .extended_lut = "off";
+defparam \spi_cnn_slave_8_u0|cmd[1]~1 .lut_mask = 64'h00FF00FF0C3F0C3F;
+defparam \spi_cnn_slave_8_u0|cmd[1]~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X1_Y19_N56
+dffeas \spi_cnn_slave_8_u0|cmd[1] (
+	.clk(\CNNver1_SPICLOCK_50~inputCLKENA0_outclk ),
+	.d(\spi_cnn_slave_8_u0|cmd[1]~1_combout ),
+	.asdata(vcc),
+	.clrn(!\CNNver1_SS_N~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\spi_cnn_slave_8_u0|cmd [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|cmd[1] .is_wysiwyg = "true";
+defparam \spi_cnn_slave_8_u0|cmd[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X1_Y19_N8
+dffeas \spi_cnn_slave_8_u0|miso_count[0] (
+	.clk(\CNNver1_SPICLOCK_50~inputCLKENA0_outclk ),
+	.d(\spi_cnn_slave_8_u0|miso_count[0]~1_combout ),
+	.asdata(vcc),
+	.clrn(!\CNNver1_SS_N~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\spi_cnn_slave_8_u0|miso_count [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|miso_count[0] .is_wysiwyg = "true";
+defparam \spi_cnn_slave_8_u0|miso_count[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X1_Y19_N48
+cyclonev_lcell_comb \spi_cnn_slave_8_u0|miso_count[1]~0 (
+// Equation(s):
+// \spi_cnn_slave_8_u0|miso_count[1]~0_combout  = ( \spi_cnn_slave_8_u0|miso_count [1] & ( \spi_cnn_slave_8_u0|miso_count[0]~DUPLICATE_q  & ( ((!\spi_cnn_slave_8_u0|cmd [0]) # ((!\spi_cnn_slave_8_u0|cmd [1]) # (\spi_cnn_slave_8_u0|cmd[1]~0_combout ))) # 
+// (\spi_cnn_slave_8_u0|miso_count [2]) ) ) ) # ( !\spi_cnn_slave_8_u0|miso_count [1] & ( \spi_cnn_slave_8_u0|miso_count[0]~DUPLICATE_q  & ( (!\spi_cnn_slave_8_u0|miso_count [2] & (\spi_cnn_slave_8_u0|cmd [0] & (\spi_cnn_slave_8_u0|cmd [1] & 
+// !\spi_cnn_slave_8_u0|cmd[1]~0_combout ))) ) ) ) # ( \spi_cnn_slave_8_u0|miso_count [1] & ( !\spi_cnn_slave_8_u0|miso_count[0]~DUPLICATE_q  ) )
+
+	.dataa(!\spi_cnn_slave_8_u0|miso_count [2]),
+	.datab(!\spi_cnn_slave_8_u0|cmd [0]),
+	.datac(!\spi_cnn_slave_8_u0|cmd [1]),
+	.datad(!\spi_cnn_slave_8_u0|cmd[1]~0_combout ),
+	.datae(!\spi_cnn_slave_8_u0|miso_count [1]),
+	.dataf(!\spi_cnn_slave_8_u0|miso_count[0]~DUPLICATE_q ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\spi_cnn_slave_8_u0|miso_count[1]~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|miso_count[1]~0 .extended_lut = "off";
+defparam \spi_cnn_slave_8_u0|miso_count[1]~0 .lut_mask = 64'h0000FFFF0200FDFF;
+defparam \spi_cnn_slave_8_u0|miso_count[1]~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X1_Y19_N49
+dffeas \spi_cnn_slave_8_u0|miso_count[1] (
+	.clk(\CNNver1_SPICLOCK_50~inputCLKENA0_outclk ),
+	.d(\spi_cnn_slave_8_u0|miso_count[1]~0_combout ),
+	.asdata(vcc),
+	.clrn(!\CNNver1_SS_N~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\spi_cnn_slave_8_u0|miso_count [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|miso_count[1] .is_wysiwyg = "true";
+defparam \spi_cnn_slave_8_u0|miso_count[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X1_Y19_N0
+cyclonev_lcell_comb \spi_cnn_slave_8_u0|miso_count[2]~2 (
+// Equation(s):
+// \spi_cnn_slave_8_u0|miso_count[2]~2_combout  = ( \spi_cnn_slave_8_u0|miso_count [2] & ( \spi_cnn_slave_8_u0|miso_count [1] ) ) # ( !\spi_cnn_slave_8_u0|miso_count [2] & ( \spi_cnn_slave_8_u0|miso_count [1] & ( (!\spi_cnn_slave_8_u0|cmd[1]~0_combout  & 
+// (\spi_cnn_slave_8_u0|cmd [0] & (\spi_cnn_slave_8_u0|cmd [1] & \spi_cnn_slave_8_u0|miso_count [0]))) ) ) ) # ( \spi_cnn_slave_8_u0|miso_count [2] & ( !\spi_cnn_slave_8_u0|miso_count [1] ) )
+
+	.dataa(!\spi_cnn_slave_8_u0|cmd[1]~0_combout ),
+	.datab(!\spi_cnn_slave_8_u0|cmd [0]),
+	.datac(!\spi_cnn_slave_8_u0|cmd [1]),
+	.datad(!\spi_cnn_slave_8_u0|miso_count [0]),
+	.datae(!\spi_cnn_slave_8_u0|miso_count [2]),
+	.dataf(!\spi_cnn_slave_8_u0|miso_count [1]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\spi_cnn_slave_8_u0|miso_count[2]~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|miso_count[2]~2 .extended_lut = "off";
+defparam \spi_cnn_slave_8_u0|miso_count[2]~2 .lut_mask = 64'h0000FFFF0002FFFF;
+defparam \spi_cnn_slave_8_u0|miso_count[2]~2 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X1_Y19_N2
+dffeas \spi_cnn_slave_8_u0|miso_count[2] (
+	.clk(\CNNver1_SPICLOCK_50~inputCLKENA0_outclk ),
+	.d(\spi_cnn_slave_8_u0|miso_count[2]~2_combout ),
+	.asdata(vcc),
+	.clrn(!\CNNver1_SS_N~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\spi_cnn_slave_8_u0|miso_count [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|miso_count[2] .is_wysiwyg = "true";
+defparam \spi_cnn_slave_8_u0|miso_count[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X1_Y19_N6
+cyclonev_lcell_comb \spi_cnn_slave_8_u0|miso_count[0]~1 (
+// Equation(s):
+// \spi_cnn_slave_8_u0|miso_count[0]~1_combout  = ( \spi_cnn_slave_8_u0|cmd [0] & ( !\spi_cnn_slave_8_u0|miso_count [0] $ ((((!\spi_cnn_slave_8_u0|cmd [1]) # (\spi_cnn_slave_8_u0|cmd[1]~0_combout )) # (\spi_cnn_slave_8_u0|miso_count [2]))) ) ) # ( 
+// !\spi_cnn_slave_8_u0|cmd [0] & ( \spi_cnn_slave_8_u0|miso_count [0] ) )
+
+	.dataa(!\spi_cnn_slave_8_u0|miso_count [2]),
+	.datab(!\spi_cnn_slave_8_u0|cmd[1]~0_combout ),
+	.datac(!\spi_cnn_slave_8_u0|cmd [1]),
+	.datad(!\spi_cnn_slave_8_u0|miso_count [0]),
+	.datae(gnd),
+	.dataf(!\spi_cnn_slave_8_u0|cmd [0]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\spi_cnn_slave_8_u0|miso_count[0]~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|miso_count[0]~1 .extended_lut = "off";
+defparam \spi_cnn_slave_8_u0|miso_count[0]~1 .lut_mask = 64'h00FF00FF08F708F7;
+defparam \spi_cnn_slave_8_u0|miso_count[0]~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X1_Y19_N7
+dffeas \spi_cnn_slave_8_u0|miso_count[0]~DUPLICATE (
+	.clk(\CNNver1_SPICLOCK_50~inputCLKENA0_outclk ),
+	.d(\spi_cnn_slave_8_u0|miso_count[0]~1_combout ),
+	.asdata(vcc),
+	.clrn(!\CNNver1_SS_N~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\spi_cnn_slave_8_u0|miso_count[0]~DUPLICATE_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|miso_count[0]~DUPLICATE .is_wysiwyg = "true";
+defparam \spi_cnn_slave_8_u0|miso_count[0]~DUPLICATE .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X1_Y19_N9
+cyclonev_lcell_comb \spi_cnn_slave_8_u0|Mux0~0 (
+// Equation(s):
+// \spi_cnn_slave_8_u0|Mux0~0_combout  = ( \spi_cnn_slave_8_u0|miso_count [1] ) # ( !\spi_cnn_slave_8_u0|miso_count [1] & ( \spi_cnn_slave_8_u0|miso_count[0]~DUPLICATE_q  ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\spi_cnn_slave_8_u0|miso_count[0]~DUPLICATE_q ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\spi_cnn_slave_8_u0|miso_count [1]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\spi_cnn_slave_8_u0|Mux0~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|Mux0~0 .extended_lut = "off";
+defparam \spi_cnn_slave_8_u0|Mux0~0 .lut_mask = 64'h0F0F0F0FFFFFFFFF;
+defparam \spi_cnn_slave_8_u0|Mux0~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X1_Y19_N57
+cyclonev_lcell_comb \spi_cnn_slave_8_u0|miso_active~0 (
+// Equation(s):
+// \spi_cnn_slave_8_u0|miso_active~0_combout  = ( \spi_cnn_slave_8_u0|cmd [1] & ( ((!\spi_cnn_slave_8_u0|cmd[1]~0_combout  & \spi_cnn_slave_8_u0|cmd [0])) # (\spi_cnn_slave_8_u0|miso_active~q ) ) ) # ( !\spi_cnn_slave_8_u0|cmd [1] & ( 
+// \spi_cnn_slave_8_u0|miso_active~q  ) )
+
+	.dataa(!\spi_cnn_slave_8_u0|cmd[1]~0_combout ),
+	.datab(gnd),
+	.datac(!\spi_cnn_slave_8_u0|cmd [0]),
+	.datad(!\spi_cnn_slave_8_u0|miso_active~q ),
+	.datae(gnd),
+	.dataf(!\spi_cnn_slave_8_u0|cmd [1]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\spi_cnn_slave_8_u0|miso_active~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|miso_active~0 .extended_lut = "off";
+defparam \spi_cnn_slave_8_u0|miso_active~0 .lut_mask = 64'h00FF00FF0AFF0AFF;
+defparam \spi_cnn_slave_8_u0|miso_active~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: FF_X1_Y19_N58
+dffeas \spi_cnn_slave_8_u0|miso_active (
+	.clk(\CNNver1_SPICLOCK_50~inputCLKENA0_outclk ),
+	.d(\spi_cnn_slave_8_u0|miso_active~0_combout ),
+	.asdata(vcc),
+	.clrn(!\CNNver1_SS_N~input_o ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\spi_cnn_slave_8_u0|miso_active~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \spi_cnn_slave_8_u0|miso_active .is_wysiwyg = "true";
+defparam \spi_cnn_slave_8_u0|miso_active .power_up = "low";
+// synopsys translate_on
+
+// Location: LABCELL_X5_Y32_N3
+cyclonev_lcell_comb \~QUARTUS_CREATED_GND~I (
+// Equation(s):
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\~QUARTUS_CREATED_GND~I_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \~QUARTUS_CREATED_GND~I .extended_lut = "off";
+defparam \~QUARTUS_CREATED_GND~I .lut_mask = 64'h0000000000000000;
+defparam \~QUARTUS_CREATED_GND~I .shared_arith = "off";
+// synopsys translate_on
+
+endmodule
