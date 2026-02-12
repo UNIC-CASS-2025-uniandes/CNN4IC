@@ -1,0 +1,37 @@
+107. Printing statistics.
+
+=== classifier_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      561 wires
+      613 wire bits
+       11 public wires
+       63 public wire bits
+       10 ports
+       62 port bits
+      594 cells
+      213   $_ANDNOT_
+       18   $_AND_
+       43   $_DFFE_PN0P_
+        1   $_MUX_
+       17   $_NAND_
+       10   $_NOR_
+       37   $_NOT_
+       36   $_ORNOT_
+       61   $_OR_
+       22   $_XNOR_
+      136   $_XOR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFFE_PN0P_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
