@@ -1,0 +1,82 @@
+Reading timing models for corner nom_typ_1p20V_25C…
+Reading timing library for the 'nom_typ_1p20V_25C' corner at '/opt/pdks/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib'…
+Reading timing library for the 'nom_typ_1p20V_25C' corner at '/opt/pdks/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_typ_1p2V_3p3V_25C.lib'…
+Reading OpenROAD database at '/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/39-openroad-globalrouting/classifier_top.odb'…
+Reading design constraints file at '/nix/store/8h87vsa3wlidvqi062p0312chxkh8ihd-python3.13-librelane-3.0.0.dev47/lib/python3.13/site-packages/librelane/scripts/base.sdc'…
+[INFO] Using clock clk…
+[INFO] Setting output delay to: 2
+[INFO] Setting input delay to: 2
+[INFO] Setting load to: 0.006
+[INFO] Setting clock uncertainty to: 0.25
+[INFO] Setting clock transition to: 0.15
+[INFO] Setting timing derate to: 5%
+[INFO] Setting signal min routing layer to: Metal2 and clock min routing layer to Metal2. 
+[INFO] Setting signal max routing layer to: TopMetal2 and clock max routing layer to TopMetal2. 
++ global_route -congestion_iterations 50 -verbose
+[INFO GRT-0020] Min routing layer: Metal2
+[INFO GRT-0021] Max routing layer: TopMetal2
+[INFO GRT-0022] Global adjustment: 30%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0088] Layer Metal1  Track-Pitch = 0.4200  line-2-Via Pitch: 0.3650
+[INFO GRT-0088] Layer Metal2  Track-Pitch = 0.4800  line-2-Via Pitch: 0.4150
+[INFO GRT-0088] Layer Metal3  Track-Pitch = 0.4200  line-2-Via Pitch: 0.4150
+[INFO GRT-0088] Layer Metal4  Track-Pitch = 0.4800  line-2-Via Pitch: 0.4150
+[INFO GRT-0088] Layer Metal5  Track-Pitch = 0.4200  line-2-Via Pitch: 0.6200
+[INFO GRT-0088] Layer TopMetal1 Track-Pitch = 2.2800  line-2-Via Pitch: 3.4100
+[INFO GRT-0088] Layer TopMetal2 Track-Pitch = 4.0000  line-2-Via Pitch: 3.9500
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0004] Blockages: 0
+[INFO GRT-0019] Found 10 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 9
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+Metal1     Horizontal          0             0          0.00%
+Metal2     Vertical         4877          3228          33.81%
+Metal3     Horizontal       5954          3908          34.36%
+Metal4     Vertical         4877          3228          33.81%
+Metal5     Horizontal       5886          3859          34.44%
+TopMetal1    Vertical         1001           618          38.26%
+TopMetal2    Horizontal        527           340          35.48%
+---------------------------------------------------------------
+
+[INFO GRT-0197] Via related to pin nodes: 3386
+[INFO GRT-0198] Via related Steiner nodes: 31
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 4044
+[INFO GRT-0112] Final usage 3D: 14052
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+Metal1               0             0            0.00%             0 /  0 /  0
+Metal2            3228           970           30.05%             0 /  0 /  0
+Metal3            3908           925           23.67%             0 /  0 /  0
+Metal4            3228            25            0.77%             0 /  0 /  0
+Metal5            3859             0            0.00%             0 /  0 /  0
+TopMetal1            618             0            0.00%             0 /  0 /  0
+TopMetal2            340             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total            15181          1920           12.65%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 23140 um
+[INFO GRT-0014] Routed nets: 721
+[INFO GRT-0006] Repairing antennas, iteration 1.
+[INFO GRT-0012] Found 0 antenna violations.
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+[INFO ODB-0403] 0 connections made, 0 conflicts skipped.
+Updating metrics…
+Cell type report:                       Count       Area
+  Clock buffer                              9     408.24
+  Timing Repair Buffer                    156    1712.79
+  Inverter                                 36     195.96
+  Clock inverter                            5      27.22
+  Sequential cell                          43    2106.52
+  Multi-Input combinational cell          458    4741.03
+  Total                                   707    9191.75
+Writing OpenROAD database to '/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/42-openroad-repairantennas/1-diodeinsertion/classifier_top.odb'…
+Writing layout to '/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/42-openroad-repairantennas/1-diodeinsertion/classifier_top.def'…

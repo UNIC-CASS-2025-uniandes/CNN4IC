@@ -1,0 +1,14 @@
+{
+    "json_h": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/05-yosys-jsonheader/classifier_top.h.json",
+    "nl": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/06-yosys-synthesis/classifier_top.nl.v",
+    "metrics": {
+        "design__lint_error__count": 0,
+        "design__lint_timing_construct__count": 0,
+        "design__lint_warning__count": 106,
+        "design__inferred_latch__count": 0,
+        "design__instance__count": 537,
+        "design__instance__area": 7042.896,
+        "design__instance_unmapped__count": 0,
+        "synthesis__check_error__count": 0
+    }
+}
