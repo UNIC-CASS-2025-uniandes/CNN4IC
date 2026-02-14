@@ -1,0 +1,6 @@
+BEGIN 1:CNNver1:fast:work
+    CNNver1_Reset_InHigh :  1:TB_SYSTEM:fast:work
+END 
+BEGIN 1:Register:fast:work
+    Register_DataOutBUS :  1:TB_SYSTEM:fast:work
+END 

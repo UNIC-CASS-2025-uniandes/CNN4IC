@@ -1,0 +1,6 @@
+
+State Machine - |CNNver1|spi_cnn_slave_8:spi_cnn_slave_8_u0|SC_STATEMACHINE_IMAGE_LOADER:loader_image_sm|STATE_Register
+Name STATE_Register.STATE_IDLE STATE_Register.STATE_WAIT_NEXT STATE_Register.STATE_LOAD_ROW 
+STATE_Register.STATE_IDLE 0 0 0 
+STATE_Register.STATE_LOAD_ROW 1 0 1 
+STATE_Register.STATE_WAIT_NEXT 1 1 0 

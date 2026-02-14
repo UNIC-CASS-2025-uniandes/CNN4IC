@@ -1,3 +1,5 @@
+//`timescale 1ns/1ps
+
 module spi_cnn_slave_8 #(parameter DATAWIDTH_BUS = 8)(
     input  wire i_SPI_Clk,
     input  wire i_SPI_CS_n,
@@ -5,16 +7,19 @@ module spi_cnn_slave_8 #(parameter DATAWIDTH_BUS = 8)(
     output wire o_SPI_MISO,
     output reg  o_start_cnn,
 
-    // Salidas físicas de las 8 filas (8 bits por fila)
+    // Salidas físicas de las 8 filas
     output wire [7:0] o_row00, output wire [7:0] o_row01,
     output wire [7:0] o_row02, output wire [7:0] o_row03,
     output wire [7:0] o_row04, output wire [7:0] o_row05,
-    output wire [7:0] o_row06, output wire [7:0] o_row07
+    output wire [7:0] o_row06, output wire [7:0] o_row07,
+    output wire o_load00, output wire o_load01,
+    output wire o_load02, output wire o_load03,
+    output wire o_load04, output wire o_load05,
+    output wire o_load06, output wire o_load07
 );
 
-    // Memorias internas: 8 filas de 8 bits
+    // Memorias internas
     reg [7:0] image_mem [0:7];
-    // Ajusté el peso a 8 espacios, pero puedes variar según tu diseño
     reg [7:0] weight_mem [0:7]; 
     
     // Asignación continua
@@ -25,15 +30,28 @@ module spi_cnn_slave_8 #(parameter DATAWIDTH_BUS = 8)(
 
     // Registros internos de control
     reg [1:0] cmd;
-    reg [6:0] bit_count;  // Reducido ya que los paquetes son más cortos
+    reg [6:0] bit_count;  
     reg [6:0] data_count; 
-    reg [3:0] row;        // Suficiente para contar hasta 8
+    reg [3:0] row;        
     reg [7:0] image_shift;
     reg [7:0] weight_shift;
     reg [6:0] weight_count;
     reg [3:0] result = 4'd7;
     reg [2:0] miso_count;
     reg       miso_active;
+
+    // Instancia de la Máquina de Estados según el estilo solicitado
+    SC_STATEMACHINE_IMAGE_LOADER loader_image_sm (
+        .i_CLOCK(i_SPI_Clk),
+        .i_RESET(i_SPI_CS_n), // Reset cuando el CS es alto
+        .i_CMD(cmd),
+        .i_DATA_COUNT(data_count),
+        .i_ROW(row),
+        .o_load00(o_load00), .o_load01(o_load01),
+        .o_load02(o_load02), .o_load03(o_load03),
+        .o_load04(o_load04), .o_load05(o_load05),
+        .o_load06(o_load06), .o_load07(o_load07)
+    );
 
     assign o_SPI_MISO = (miso_active) ? result[3 - miso_count] : 1'bZ;
 
@@ -49,45 +67,41 @@ module spi_cnn_slave_8 #(parameter DATAWIDTH_BUS = 8)(
             cmd          <= 2'b00;
         end
         else begin
-            bit_count <= bit_count + 1;
+            bit_count <= bit_count + 7'd1;
 
             if (bit_count < 2) begin
                 cmd[1 - bit_count] <= i_SPI_MOSI;
                 data_count <= 0;
             end
             else begin
-                data_count <= data_count + 1;
-
-                // LOAD IMAGE (00) - Ahora espera 8 bits (data_count de 0 a 7)
+                data_count <= data_count + 7'd1;
+					 // LOAD IMAGE (00)
                 if (cmd == 2'b00) begin
                     image_shift <= {image_shift[6:0], i_SPI_MOSI};
                     if (data_count == 7) begin
                         image_mem[row] <= {image_shift[6:0], i_SPI_MOSI};
-                        row <= row + 1;
+                        row <= row + 4'd1;
                         data_count <= 0; 
                     end
                 end
-
-                // LOAD WEIGHTS (01)
+					 // LOAD WEIGHTS (01)
                 else if (cmd == 2'b01) begin
                     weight_shift <= {weight_shift[6:0], i_SPI_MOSI};
                     if (data_count == 7) begin
                         weight_mem[weight_count] <= {weight_shift[6:0], i_SPI_MOSI};
-                        weight_count <= weight_count + 1;
+                        weight_count <= weight_count + 7'd1;
                         data_count <= 0;
                     end
                 end
-
-                // START CNN (10)
+					 // START CNN (10)
                 else if (cmd == 2'b10) begin
                     o_start_cnn <= 1;
                 end
-
-                // READ RESULT (11)
+					 // READ RESULT (11)
                 else if (cmd == 2'b11) begin
                     miso_active <= 1;
                     if (miso_count < 4)
-                        miso_count <= miso_count + 1;
+                        miso_count <= miso_count + 3'd1;
                 end
             end
         end

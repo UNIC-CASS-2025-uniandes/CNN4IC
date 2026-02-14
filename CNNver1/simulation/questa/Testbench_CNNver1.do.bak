@@ -1,0 +1,132 @@
+`timescale 1 ns/ 1 ns
+module TB_SYSTEM();
+
+// ============================================
+// Parameter ( may differ for physical synthesis)
+// ============================================
+	reg eachvec;
+	parameter TCK = 20; // Periodo de reloj de 20ns (50MHz)
+	parameter CLK_FREQ = 1000000000 / TCK;
+	parameter DATAWIDTH_BUS = 8;
+	
+	integer ii = 0;
+	integer jj = 0;
+
+// ============================================
+// INTERNAL WIRE AND REG DECLARATIONS
+// ============================================
+	// Wires (OUTPUTS del sistema)
+	wire TB_SYSTEM_MISO;
+
+	// Reg (INPUTS del sistema)
+	reg TB_SYSTEM_CLOCK_50;
+	reg TB_SYSTEM_SS_N;
+	reg TB_SYSTEM_MOSI;
+	
+	// Registros internos para datos de prueba
+	reg [7:0] test_matrix [0:7];
+
+// ============================================
+// UNIT UNDER TEST INSTANTIATION
+// ============================================
+	CNNver1 #(
+		.DATAWIDTH_BUS(DATAWIDTH_BUS)
+	) CNNver1_u0 (
+		.CNNver1_SPICLOCK_50(TB_SYSTEM_CLOCK_50),
+		.CNNver1_SS_N       (TB_SYSTEM_SS_N),
+		.CNNver1_MOSI       (TB_SYSTEM_MOSI),
+		.CNNver1_MISO       (TB_SYSTEM_MISO)
+	);
+
+// ============================================
+// INITIAL BLOCK: Setup y Display
+// ============================================
+initial                                                 
+begin                                                   
+	TB_SYSTEM_CLOCK_50 <= 0;
+	TB_SYSTEM_SS_N     <= 1'b1;
+	TB_SYSTEM_MOSI     <= 1'b0;
+	
+	// Llenar matriz de prueba con valores reconocibles
+	test_matrix[0] = 8'hAA; test_matrix[1] = 8'hBB;
+	test_matrix[2] = 8'hCC; test_matrix[3] = 8'hDD;
+	test_matrix[4] = 8'hEE; test_matrix[5] = 8'hFF;
+	test_matrix[6] = 8'h11; test_matrix[7] = 8'h22;
+
+	$display("---------------------------------------------------");
+	$display("Running CNNver1 testbench - SPI 8x8 Image Loader");
+	$display("---------------------------------------------------");
+end                                                     
+
+// ============================================
+// CLOCK GENERATION
+// ============================================
+always                                                  
+	#(TCK/2) TB_SYSTEM_CLOCK_50 <= ~ TB_SYSTEM_CLOCK_50;
+
+// ============================================
+// TASK: Send SPI Byte (MSB First)
+// ============================================
+task send_byte;
+	input [7:0] byte_in;
+	begin
+		for (jj = 7; jj >= 0; jj = jj - 1) begin
+			TB_SYSTEM_MOSI = byte_in[jj];
+			#(TCK); // Espera un ciclo completo de reloj SPI
+		end
+	end
+endtask
+
+// ============================================
+// STIMULUS PROCESS
+// ============================================
+initial begin                                     
+// insert code here --> begin     
+	
+	// 1. Espera de estabilidad y Reset inicial
+	#(TCK*5);
+	
+	// 2. Inicio de transmisión SPI (Bajar SS_N)
+	@(negedge TB_SYSTEM_CLOCK_50);
+	TB_SYSTEM_SS_N <= 1'b0;
+	
+	// 3. Enviar Comando LOAD IMAGE (00) - 2 bits
+	// Tu código: cmd[1-bit_count]
+	TB_SYSTEM_MOSI <= 1'b0; #(TCK); // bit 0 de cmd
+	TB_SYSTEM_MOSI <= 1'b0; #(TCK); // bit 1 de cmd
+	
+	// 4. Enviar las 8 filas de la imagen
+	$display("[TIME %0t] Iniciando envio de bytes...", $time);
+	for (ii = 0; ii < 8; ii = ii + 1) begin
+		send_byte(test_matrix[ii]);
+		$display("[TIME %0t] Byte %0d enviado: %h", $time, ii, test_matrix[ii]);
+	end
+	
+	// 5. Finalizar transmisión (Subir SS_N)
+	#(TCK);
+	TB_SYSTEM_SS_N <= 1'b1;
+	
+	// 6. Tiempo de espera para que los registros se estabilicen
+	#(TCK*10);
+	
+	// 7. Verificación de Datos en los Registros Finales
+	$display("---------------------------------------------------");
+	$display("VERIFICACION DE REGISTROS (Hardware Output):");
+	$display("Reg0: %h (Exp: AA) | Reg1: %h (Exp: BB)", CNNver1_u0.register_u0.Datos, CNNver1_u0.register_u1.Datos);
+	$display("Reg2: %h (Exp: CC) | Reg3: %h (Exp: DD)", CNNver1_u0.register_u2.Datos, CNNver1_u0.register_u3.Datos);
+	$display("Reg4: %h (Exp: EE) | Reg5: %h (Exp: FF)", CNNver1_u0.register_u4.Datos, CNNver1_u0.register_u5.Datos);
+	$display("Reg6: %h (Exp: 11) | Reg7: %h (Exp: 22)", CNNver1_u0.register_u6.Datos, CNNver1_u0.register_u7.Datos);
+	$display("---------------------------------------------------");
+
+	if (CNNver1_u0.register_u0.Datos == 8'hAA && CNNver1_u0.register_u7.Datos == 8'h22)
+		$display("RESULTADO: TEST PASSED");
+	else
+		$display("RESULTADO: TEST FAILED");
+
+	#(TCK*5);
+	@eachvec;
+	$finish;                                              
+// --> end                                              
+end                                                     
+
+endmodule
