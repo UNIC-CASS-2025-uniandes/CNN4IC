@@ -12,28 +12,36 @@ module CNNver1 (
 parameter DATAWIDTH_BUS = 8;
 
 //////////// WIRE //////////
-wire [7:0]  SPI_2_CNN_Start_routing_cwire;
-wire [7:0]  SPI_2_row00_DataOutBUS_routing_cwire;
-wire [7:0]  SPI_2_row01_DataOutBUS_routing_cwire;
-wire [7:0]  SPI_2_row02_DataOutBUS_routing_cwire;
-wire [7:0]  SPI_2_row03_DataOutBUS_routing_cwire;
-wire [7:0]  SPI_2_row04_DataOutBUS_routing_cwire;
-wire [7:0]  SPI_2_row05_DataOutBUS_routing_cwire;
-wire [7:0]  SPI_2_row06_DataOutBUS_routing_cwire;
-wire [7:0]  SPI_2_row07_DataOutBUS_routing_cwire;
+wire SPI_2_CNN_Start_routing_cwire;
+wire [DATAWIDTH_BUS-1:0]  SPI_2_row00_DataOutBUS_routing_cwire;
+wire [DATAWIDTH_BUS-1:0]  SPI_2_row01_DataOutBUS_routing_cwire;
+wire [DATAWIDTH_BUS-1:0]  SPI_2_row02_DataOutBUS_routing_cwire;
+wire [DATAWIDTH_BUS-1:0]  SPI_2_row03_DataOutBUS_routing_cwire;
+wire [DATAWIDTH_BUS-1:0]  SPI_2_row04_DataOutBUS_routing_cwire;
+wire [DATAWIDTH_BUS-1:0]  SPI_2_row05_DataOutBUS_routing_cwire;
+wire [DATAWIDTH_BUS-1:0]  SPI_2_row06_DataOutBUS_routing_cwire;
+wire [DATAWIDTH_BUS-1:0]  SPI_2_row07_DataOutBUS_routing_cwire;
 
-wire [7:0]	Register_u0_DataOutBUS_routing_cwire;
-wire [7:0]	Register_u1_DataOutBUS_routing_cwire;
-wire [7:0]	Register_u2_DataOutBUS_routing_cwire;
-wire [7:0]	Register_u3_DataOutBUS_routing_cwire;
-wire [7:0]	Register_u4_DataOutBUS_routing_cwire;
-wire [7:0]	Register_u5_DataOutBUS_routing_cwire;
-wire [7:0]	Register_u6_DataOutBUS_routing_cwire;
-wire [7:0]	Register_u7_DataOutBUS_routing_cwire;
+wire [DATAWIDTH_BUS-1:0]	Register_u0_DataOutBUS_routing_cwire;
+wire [DATAWIDTH_BUS-1:0]	Register_u1_DataOutBUS_routing_cwire;
+wire [DATAWIDTH_BUS-1:0]	Register_u2_DataOutBUS_routing_cwire;
+wire [DATAWIDTH_BUS-1:0]	Register_u3_DataOutBUS_routing_cwire;
+wire [DATAWIDTH_BUS-1:0]	Register_u4_DataOutBUS_routing_cwire;
+wire [DATAWIDTH_BUS-1:0]	Register_u5_DataOutBUS_routing_cwire;
+wire [DATAWIDTH_BUS-1:0]	Register_u6_DataOutBUS_routing_cwire;
+wire [DATAWIDTH_BUS-1:0]	Register_u7_DataOutBUS_routing_cwire;
+
+wire Register_u0_Load_InLow_routing_cwire;
+wire Register_u1_Load_InLow_routing_cwire;
+wire Register_u2_Load_InLow_routing_cwire;
+wire Register_u3_Load_InLow_routing_cwire;
+wire Register_u4_Load_InLow_routing_cwire;
+wire Register_u5_Load_InLow_routing_cwire;
+wire Register_u6_Load_InLow_routing_cwire;
+wire Register_u7_Load_InLow_routing_cwire;
 
 //WIRES PENDIENTES DE CORRECTO USO//
-wire CNNver1_Load_InLow;
-wire CNNver1_Reset_InHigh;
+wire CNNver1_Reset_InHigh = 1'b0;
 
 
 // 1. Unidad de Interfaz Serial (SPI + Control)
@@ -50,14 +58,22 @@ spi_cnn_slave_8 #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) spi_cnn_slave_8_u0 (
 	.o_row04 (SPI_2_row04_DataOutBUS_routing_cwire),
 	.o_row05 (SPI_2_row05_DataOutBUS_routing_cwire),
 	.o_row06 (SPI_2_row06_DataOutBUS_routing_cwire),
-	.o_row07 (SPI_2_row07_DataOutBUS_routing_cwire)
+	.o_row07 (SPI_2_row07_DataOutBUS_routing_cwire),
+	.o_load00 (Register_u0_Load_InLow_routing_cwire),
+	.o_load01 (Register_u1_Load_InLow_routing_cwire),
+	.o_load02 (Register_u2_Load_InLow_routing_cwire),
+	.o_load03 (Register_u3_Load_InLow_routing_cwire),
+	.o_load04 (Register_u4_Load_InLow_routing_cwire),
+	.o_load05 (Register_u5_Load_InLow_routing_cwire),
+	.o_load06 (Register_u6_Load_InLow_routing_cwire),
+	.o_load07 (Register_u7_Load_InLow_routing_cwire)
 );
 
 Register #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) register_u0 (
 	.Register_DataInBUS(SPI_2_row00_DataOutBUS_routing_cwire),
 	.Register_CLOCK (CNNver1_SPICLOCK_50),
 	.Register_Reset_InHigh (CNNver1_Reset_InHigh),
-	.Register_Load_InLow (CNNver1_Load_InLow),
+	.Register_Load_InLow (Register_u0_Load_InLow_routing_cwire),
 	.Register_DataOutBUS (Register_u0_DataOutBUS_routing_cwire)
 );
 
@@ -65,7 +81,7 @@ Register #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) register_u1 (
 	.Register_DataInBUS(SPI_2_row01_DataOutBUS_routing_cwire),
 	.Register_CLOCK (CNNver1_SPICLOCK_50),
 	.Register_Reset_InHigh (CNNver1_Reset_InHigh),
-	.Register_Load_InLow (CNNver1_Load_InLow),
+	.Register_Load_InLow (Register_u1_Load_InLow_routing_cwire),
 	.Register_DataOutBUS (Register_u1_DataOutBUS_routing_cwire)
 );
 
@@ -73,7 +89,7 @@ Register #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) register_u2 (
 	.Register_DataInBUS(SPI_2_row02_DataOutBUS_routing_cwire),
 	.Register_CLOCK (CNNver1_SPICLOCK_50),
 	.Register_Reset_InHigh (CNNver1_Reset_InHigh),
-	.Register_Load_InLow (CNNver1_Load_InLow),
+	.Register_Load_InLow (Register_u2_Load_InLow_routing_cwire),
 	.Register_DataOutBUS (Register_u2_DataOutBUS_routing_cwire)
 );
 
@@ -81,7 +97,7 @@ Register #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) register_u3 (
 	.Register_DataInBUS(SPI_2_row03_DataOutBUS_routing_cwire),
 	.Register_CLOCK (CNNver1_SPICLOCK_50),
 	.Register_Reset_InHigh (CNNver1_Reset_InHigh),
-	.Register_Load_InLow (CNNver1_Load_InLow),
+	.Register_Load_InLow (Register_u3_Load_InLow_routing_cwire),
 	.Register_DataOutBUS (Register_u3_DataOutBUS_routing_cwire)
 );
 
@@ -89,7 +105,7 @@ Register #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) register_u4 (
 	.Register_DataInBUS(SPI_2_row04_DataOutBUS_routing_cwire),
 	.Register_CLOCK (CNNver1_SPICLOCK_50),
 	.Register_Reset_InHigh (CNNver1_Reset_InHigh),
-	.Register_Load_InLow (CNNver1_Load_InLow),
+	.Register_Load_InLow (Register_u4_Load_InLow_routing_cwire),
 	.Register_DataOutBUS (Register_u4_DataOutBUS_routing_cwire)
 );
 
@@ -97,7 +113,7 @@ Register #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) register_u5 (
 	.Register_DataInBUS(SPI_2_row05_DataOutBUS_routing_cwire),
 	.Register_CLOCK (CNNver1_SPICLOCK_50),
 	.Register_Reset_InHigh (CNNver1_Reset_InHigh),
-	.Register_Load_InLow (CNNver1_Load_InLow),
+	.Register_Load_InLow (Register_u5_Load_InLow_routing_cwire),
 	.Register_DataOutBUS (Register_u5_DataOutBUS_routing_cwire)
 );
 
@@ -105,7 +121,7 @@ Register #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) register_u6 (
 	.Register_DataInBUS(SPI_2_row06_DataOutBUS_routing_cwire),
 	.Register_CLOCK (CNNver1_SPICLOCK_50),
 	.Register_Reset_InHigh (CNNver1_Reset_InHigh),
-	.Register_Load_InLow (CNNver1_Load_InLow),
+	.Register_Load_InLow (Register_u6_Load_InLow_routing_cwire),
 	.Register_DataOutBUS (Register_u6_DataOutBUS_routing_cwire)
 );
 
@@ -113,7 +129,7 @@ Register #(.DATAWIDTH_BUS(DATAWIDTH_BUS)) register_u7 (
 	.Register_DataInBUS(SPI_2_row07_DataOutBUS_routing_cwire),
 	.Register_CLOCK (CNNver1_SPICLOCK_50),
 	.Register_Reset_InHigh (CNNver1_Reset_InHigh),
-	.Register_Load_InLow (CNNver1_Load_InLow),
+	.Register_Load_InLow (Register_u7_Load_InLow_routing_cwire),
 	.Register_DataOutBUS (Register_u7_DataOutBUS_routing_cwire)
 );
 

@@ -38,14 +38,14 @@
 
 
 set_global_assignment -name FAMILY "Cyclone V"
-set_global_assignment -name DEVICE 5CEBA2F17A7
+set_global_assignment -name DEVICE 5CSEMA4U23C6
 set_global_assignment -name TOP_LEVEL_ENTITY CNNver1
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 24.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:34:12  FEBRUARY 06, 2026"
 set_global_assignment -name LAST_QUARTUS_VERSION "24.1std.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
-set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
-set_global_assignment -name MAX_CORE_JUNCTION_TEMP 125
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name EDA_SIMULATION_TOOL "Questa Intel FPGA (Verilog)"
@@ -59,12 +59,25 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE rtl/STATEMACHINE_IMAGE_LOADER.v
 set_global_assignment -name VERILOG_FILE rtl/Register.v
 set_global_assignment -name VERILOG_FILE rtl/spi_cnn_slave_8.v
 set_global_assignment -name VERILOG_FILE rtl/Weight_Registers.v
 set_global_assignment -name VERILOG_FILE rtl/CNN.v
 set_global_assignment -name VERILOG_FILE CNNver1.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SDC_FILE CNNver1.sdc
+
+set_global_assignment -name BOARD "Atlas-SoC (DE0-Nano-SoC)"
+
+# Asignación de Estándar de Voltaje
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+
+# Pines para el SPI (Ejemplo usando GPIO_0)
+set_location_assignment PIN_V11 -to CNNver1_SPICLOCK_50
+set_location_assignment PIN_V12 -to CNNver1_MOSI
+set_location_assignment PIN_E8 -to CNNver1_MISO
+set_location_assignment PIN_D8 -to CNNver1_SS_N
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

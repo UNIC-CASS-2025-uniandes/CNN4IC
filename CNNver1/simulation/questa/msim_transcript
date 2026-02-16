@@ -1,0 +1,155 @@
+# Reading pref.tcl
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2024.3 win64 Sep 10 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do CNNver1_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Intel Starter FPGA Edition-64 vmap 2024.3 Lib Mapping Utility 2024.09 Sep 10 2024
+# vmap work rtl_work 
+# Copying c:/altera_lite/24.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl {C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl/STATEMACHINE_IMAGE_LOADER.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 00:29:02 on Feb 14,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl" C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl/STATEMACHINE_IMAGE_LOADER.v 
+# -- Compiling module SC_STATEMACHINE_IMAGE_LOADER
+# 
+# Top level modules:
+# 	SC_STATEMACHINE_IMAGE_LOADER
+# End time: 00:29:02 on Feb 14,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl {C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl/Register.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 00:29:02 on Feb 14,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl" C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl/Register.v 
+# -- Compiling module Register
+# 
+# Top level modules:
+# 	Register
+# End time: 00:29:02 on Feb 14,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl {C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl/spi_cnn_slave_8.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 00:29:03 on Feb 14,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl" C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl/spi_cnn_slave_8.v 
+# -- Compiling module spi_cnn_slave_8
+# 
+# Top level modules:
+# 	spi_cnn_slave_8
+# End time: 00:29:03 on Feb 14,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1 {C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/CNNver1.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 00:29:03 on Feb 14,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1" C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/CNNver1.v 
+# -- Compiling module CNNver1
+# 
+# Top level modules:
+# 	CNNver1
+# End time: 00:29:03 on Feb 14,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+do testbench_CNNver1.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 00:29:13 on Feb 14,2026
+# vlog -reportprogress 300 ../../rtl/Register.v 
+# -- Compiling module Register
+# 
+# Top level modules:
+# 	Register
+# End time: 00:29:13 on Feb 14,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 00:29:13 on Feb 14,2026
+# vlog -reportprogress 300 ../../rtl/STATEMACHINE_IMAGE_LOADER.v 
+# -- Compiling module SC_STATEMACHINE_IMAGE_LOADER
+# 
+# Top level modules:
+# 	SC_STATEMACHINE_IMAGE_LOADER
+# End time: 00:29:14 on Feb 14,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 00:29:14 on Feb 14,2026
+# vlog -reportprogress 300 ../../rtl/spi_cnn_slave_8.v 
+# -- Compiling module spi_cnn_slave_8
+# 
+# Top level modules:
+# 	spi_cnn_slave_8
+# End time: 00:29:14 on Feb 14,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 00:29:14 on Feb 14,2026
+# vlog -reportprogress 300 ../../CNNver1.v 
+# -- Compiling module CNNver1
+# 
+# Top level modules:
+# 	CNNver1
+# End time: 00:29:14 on Feb 14,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 00:29:14 on Feb 14,2026
+# vlog -reportprogress 300 Testbench_CNNver1.vt 
+# -- Compiling module TB_SYSTEM
+# 
+# Top level modules:
+# 	TB_SYSTEM
+# End time: 00:29:14 on Feb 14,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" work.TB_SYSTEM 
+# Start time: 00:29:15 on Feb 14,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vopt-143) Recognized 1 FSM in module "SC_STATEMACHINE_IMAGE_LOADER(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.TB_SYSTEM(fast)
+# Loading work.CNNver1(fast)
+# Loading work.spi_cnn_slave_8(fast)
+# Loading work.SC_STATEMACHINE_IMAGE_LOADER(fast)
+# Loading work.Register(fast)
+# ---------------------------------------------------
+# Running CNNver1 testbench - SPI 8x8 Image Loader
+# ---------------------------------------------------
+# [TIME 290] Iniciando envio de bytes...
+# [TIME 451] Byte 0 enviado: aa
+# [TIME 611] Byte 1 enviado: bb
+# [TIME 771] Byte 2 enviado: cc
+# [TIME 931] Byte 3 enviado: dd
+# [TIME 1091] Byte 4 enviado: ee
+# [TIME 1251] Byte 5 enviado: ff
+# [TIME 1411] Byte 6 enviado: 11
+# [TIME 1571] Byte 7 enviado: 22
+# ---------------------------------------------------
+# VERIFICACION DE REGISTROS (Hardware Output):
+# Reg0: 00 (Exp: AA) | Reg1: xx (Exp: BB)
+# Reg2: 00 (Exp: CC) | Reg3: xx (Exp: DD)
+# Reg4: 00 (Exp: EE) | Reg5: xx (Exp: FF)
+# Reg6: 00 (Exp: 11) | Reg7: xx (Exp: 22)
+# ---------------------------------------------------
+# RESULTADO: TEST FAILED
+# ** Note: $finish    : Testbench_CNNver1.vt(131)
+#    Time: 2102 ns  Iteration: 0  Instance: /TB_SYSTEM
+# 1
+# Break in Module TB_SYSTEM at Testbench_CNNver1.vt line 131
+# 0 ns
+# 2207 ns
+# Causality operation skipped due to absence of debug database file
+# End time: 00:32:24 on Feb 14,2026, Elapsed time: 0:03:09
+# Errors: 0, Warnings: 1

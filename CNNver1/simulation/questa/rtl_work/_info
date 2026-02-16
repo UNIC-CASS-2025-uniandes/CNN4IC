@@ -1,0 +1,145 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2024.3 2024.09, Sep 10 2024
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/simulation/questa
+T_opt
+!s110 1771046956
+VK?akVd^L^Ih8`UhK1dd_j0
+04 9 4 work TB_SYSTEM fast 0
+=1-70a8d34c8dad-6990082b-2b7-2de0
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U12 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2024.3;79
+vCNNver1
+2../../CNNver1.v
+Z3 !s110 1771046954
+!i10b 1
+!s100 `XBmTXg4BgV4BdR24nX9>2
+I<l3?FhjE6oEIZ@[@?hT?:3
+R1
+w1771042870
+8../../CNNver1.v
+F../../CNNver1.v
+!i122 3
+L0 2 150
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2024.3;79
+r1
+!s85 0
+31
+Z6 !s108 1771046954.000000
+!s107 ../../CNNver1.v|
+!s90 -reportprogress|300|../../CNNver1.v|
+!i113 0
+Z7 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+n@c@n@nver1
+vRegister
+2../../rtl/Register.v
+!s110 1771046953
+!i10b 1
+!s100 2e1j@:Q6V1[e;SXVMRSnK1
+IIjCn3K6@1CYg7gCWbSKa72
+R1
+w1770529075
+8../../rtl/Register.v
+F../../rtl/Register.v
+!i122 0
+L0 1 22
+R4
+R5
+r1
+!s85 0
+31
+Z8 !s108 1771046953.000000
+!s107 ../../rtl/Register.v|
+!s90 -reportprogress|300|../../rtl/Register.v|
+!i113 0
+R7
+R2
+n@register
+vSC_STATEMACHINE_IMAGE_LOADER
+2../../rtl/STATEMACHINE_IMAGE_LOADER.v
+R3
+!i10b 1
+!s100 FLUZ1D;`274NKT0k`>Sig2
+ITj1WG:[cfIfLJB=[X[ABi3
+R1
+w1771043154
+8../../rtl/STATEMACHINE_IMAGE_LOADER.v
+F../../rtl/STATEMACHINE_IMAGE_LOADER.v
+!i122 1
+L0 4 86
+R4
+R5
+r1
+!s85 0
+31
+R8
+!s107 ../../rtl/STATEMACHINE_IMAGE_LOADER.v|
+!s90 -reportprogress|300|../../rtl/STATEMACHINE_IMAGE_LOADER.v|
+!i113 0
+R7
+R2
+n@s@c_@s@t@a@t@e@m@a@c@h@i@n@e_@i@m@a@g@e_@l@o@a@d@e@r
+vspi_cnn_slave_8
+2../../rtl/spi_cnn_slave_8.v
+R3
+!i10b 1
+!s100 fMdgeOYW:6`:3T[Bf0]=80
+I3GmEMX_ikcb7=5dM;iHLG1
+R1
+w1771043260
+8../../rtl/spi_cnn_slave_8.v
+F../../rtl/spi_cnn_slave_8.v
+!i122 2
+L0 3 107
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 ../../rtl/spi_cnn_slave_8.v|
+!s90 -reportprogress|300|../../rtl/spi_cnn_slave_8.v|
+!i113 0
+R7
+R2
+vTB_SYSTEM
+2Testbench_CNNver1.vt
+R3
+!i10b 1
+!s100 X`3?PL:KgUXhE3e_U75G[3
+IBhOXTbJ3<nc@b1bzJZO553
+R1
+w1771046307
+8Testbench_CNNver1.vt
+FTestbench_CNNver1.vt
+!i122 4
+L0 2 133
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 Testbench_CNNver1.vt|
+!s90 -reportprogress|300|Testbench_CNNver1.vt|
+!i113 0
+R7
+R2
+n@t@b_@s@y@s@t@e@m

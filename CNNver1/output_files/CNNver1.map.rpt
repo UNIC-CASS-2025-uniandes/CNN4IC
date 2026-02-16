@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CNNver1
-Fri Feb  6 12:56:42 2026
+Sat Feb 14 00:26:58 2026
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -13,29 +13,33 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |CNNver1
- 10. Parameter Settings for User Entity Instance: spi_cnn_slave_8:spi_cnn_slave_8_u0
- 11. Parameter Settings for User Entity Instance: Register:register_u0
- 12. Parameter Settings for User Entity Instance: Register:register_u1
- 13. Parameter Settings for User Entity Instance: Register:register_u2
- 14. Parameter Settings for User Entity Instance: Register:register_u3
- 15. Parameter Settings for User Entity Instance: Register:register_u4
- 16. Parameter Settings for User Entity Instance: Register:register_u5
- 17. Parameter Settings for User Entity Instance: Register:register_u6
- 18. Parameter Settings for User Entity Instance: Register:register_u7
- 19. Port Connectivity Checks: "Register:register_u7"
- 20. Port Connectivity Checks: "Register:register_u6"
- 21. Port Connectivity Checks: "Register:register_u5"
- 22. Port Connectivity Checks: "Register:register_u4"
- 23. Port Connectivity Checks: "Register:register_u3"
- 24. Port Connectivity Checks: "Register:register_u2"
- 25. Port Connectivity Checks: "Register:register_u1"
- 26. Port Connectivity Checks: "Register:register_u0"
- 27. Port Connectivity Checks: "spi_cnn_slave_8:spi_cnn_slave_8_u0"
- 28. Post-Synthesis Netlist Statistics for Top Partition
- 29. Elapsed Time Per Partition
- 30. Analysis & Synthesis Messages
+  8. State Machine - |CNNver1|spi_cnn_slave_8:spi_cnn_slave_8_u0|SC_STATEMACHINE_IMAGE_LOADER:loader_image_sm|STATE_Register
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |CNNver1
+ 14. Parameter Settings for User Entity Instance: spi_cnn_slave_8:spi_cnn_slave_8_u0
+ 15. Parameter Settings for User Entity Instance: Register:register_u0
+ 16. Parameter Settings for User Entity Instance: Register:register_u1
+ 17. Parameter Settings for User Entity Instance: Register:register_u2
+ 18. Parameter Settings for User Entity Instance: Register:register_u3
+ 19. Parameter Settings for User Entity Instance: Register:register_u4
+ 20. Parameter Settings for User Entity Instance: Register:register_u5
+ 21. Parameter Settings for User Entity Instance: Register:register_u6
+ 22. Parameter Settings for User Entity Instance: Register:register_u7
+ 23. Port Connectivity Checks: "Register:register_u7"
+ 24. Port Connectivity Checks: "Register:register_u6"
+ 25. Port Connectivity Checks: "Register:register_u5"
+ 26. Port Connectivity Checks: "Register:register_u4"
+ 27. Port Connectivity Checks: "Register:register_u3"
+ 28. Port Connectivity Checks: "Register:register_u2"
+ 29. Port Connectivity Checks: "Register:register_u1"
+ 30. Port Connectivity Checks: "Register:register_u0"
+ 31. Port Connectivity Checks: "spi_cnn_slave_8:spi_cnn_slave_8_u0"
+ 32. Post-Synthesis Netlist Statistics for Top Partition
+ 33. Elapsed Time Per Partition
+ 34. Analysis & Synthesis Messages
 
 
 
@@ -62,7 +66,7 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Feb  6 12:56:42 2026           ;
+; Analysis & Synthesis Status     ; Successful - Sat Feb 14 00:26:58 2026           ;
 ; Quartus Prime Version           ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                   ; CNNver1                                         ;
 ; Top-level Entity Name           ; CNNver1                                         ;
@@ -87,7 +91,7 @@ on the Quartus Prime software download page.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CEBA2F17A7        ;                    ;
+; Device                                                                          ; 5CSEMA4U23C6       ;                    ;
 ; Top-level entity name                                                           ; CNNver1            ; CNNver1            ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -186,15 +190,16 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                 ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                   ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
-; rtl/Register.v                   ; yes             ; User Verilog HDL File  ; C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/rtl/Register.v        ;         ;
-; rtl/spi_cnn_slave_8.v            ; yes             ; User Verilog HDL File  ; C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/rtl/spi_cnn_slave_8.v ;         ;
-; CNNver1.v                        ; yes             ; User Verilog HDL File  ; C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/CNNver1.v             ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                  ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------+---------+
+; rtl/STATEMACHINE_IMAGE_LOADER.v  ; yes             ; User Verilog HDL File  ; C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl/STATEMACHINE_IMAGE_LOADER.v ;         ;
+; rtl/Register.v                   ; yes             ; User Verilog HDL File  ; C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl/Register.v                  ;         ;
+; rtl/spi_cnn_slave_8.v            ; yes             ; User Verilog HDL File  ; C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl/spi_cnn_slave_8.v           ;         ;
+; CNNver1.v                        ; yes             ; User Verilog HDL File  ; C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/CNNver1.v                       ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------------------------+
@@ -235,6 +240,46 @@ on the Quartus Prime software download page.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |CNNver1|spi_cnn_slave_8:spi_cnn_slave_8_u0|SC_STATEMACHINE_IMAGE_LOADER:loader_image_sm|STATE_Register     ;
++--------------------------------+---------------------------+--------------------------------+-------------------------------+
+; Name                           ; STATE_Register.STATE_IDLE ; STATE_Register.STATE_WAIT_NEXT ; STATE_Register.STATE_LOAD_ROW ;
++--------------------------------+---------------------------+--------------------------------+-------------------------------+
+; STATE_Register.STATE_IDLE      ; 0                         ; 0                              ; 0                             ;
+; STATE_Register.STATE_LOAD_ROW  ; 1                         ; 0                              ; 1                             ;
+; STATE_Register.STATE_WAIT_NEXT ; 1                         ; 1                              ; 0                             ;
++--------------------------------+---------------------------+--------------------------------+-------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                  ;
++----------------------------------------------------------------------------------------------------------------+--------------------+
+; Register name                                                                                                  ; Reason for Removal ;
++----------------------------------------------------------------------------------------------------------------+--------------------+
+; spi_cnn_slave_8:spi_cnn_slave_8_u0|SC_STATEMACHINE_IMAGE_LOADER:loader_image_sm|STATE_Register~6               ; Lost fanout        ;
+; spi_cnn_slave_8:spi_cnn_slave_8_u0|data_count[0..6]                                                            ; Lost fanout        ;
+; spi_cnn_slave_8:spi_cnn_slave_8_u0|SC_STATEMACHINE_IMAGE_LOADER:loader_image_sm|STATE_Register.STATE_LOAD_ROW  ; Lost fanout        ;
+; spi_cnn_slave_8:spi_cnn_slave_8_u0|SC_STATEMACHINE_IMAGE_LOADER:loader_image_sm|STATE_Register.STATE_WAIT_NEXT ; Lost fanout        ;
+; spi_cnn_slave_8:spi_cnn_slave_8_u0|SC_STATEMACHINE_IMAGE_LOADER:loader_image_sm|STATE_Register.STATE_IDLE      ; Lost fanout        ;
+; Total Number of Removed Registers = 11                                                                         ;                    ;
++----------------------------------------------------------------------------------------------------------------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                               ;
++--------------------------------------------------+--------------------+---------------------------------------------------+
+; Register name                                    ; Reason for Removal ; Registers Removed due to This Register            ;
++--------------------------------------------------+--------------------+---------------------------------------------------+
+; spi_cnn_slave_8:spi_cnn_slave_8_u0|data_count[6] ; Lost Fanouts       ; spi_cnn_slave_8:spi_cnn_slave_8_u0|data_count[5], ;
+;                                                  ;                    ; spi_cnn_slave_8:spi_cnn_slave_8_u0|data_count[4], ;
+;                                                  ;                    ; spi_cnn_slave_8:spi_cnn_slave_8_u0|data_count[3], ;
+;                                                  ;                    ; spi_cnn_slave_8:spi_cnn_slave_8_u0|data_count[2], ;
+;                                                  ;                    ; spi_cnn_slave_8:spi_cnn_slave_8_u0|data_count[1], ;
+;                                                  ;                    ; spi_cnn_slave_8:spi_cnn_slave_8_u0|data_count[0]  ;
++--------------------------------------------------+--------------------+---------------------------------------------------+
+
+
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
@@ -248,6 +293,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |CNNver1|spi_cnn_slave_8:spi_cnn_slave_8_u0|data_count[6] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -350,110 +404,86 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Register:register_u7"                                                                                                                                                                               ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port                    ; Type   ; Severity ; Details                                                                                                                                                                          ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register_DataInBUS      ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; Register_DataOutBUS     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (8 bits) it drives.  The 7 most-significant bit(s) in the port expression will be connected to GND.            ;
-; Register_DataOutBUS[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register:register_u7"                                                                              ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                                             ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Register_DataOutBUS ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Register:register_u6"                                                                                                                                                                               ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port                    ; Type   ; Severity ; Details                                                                                                                                                                          ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register_DataInBUS      ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; Register_DataOutBUS     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (8 bits) it drives.  The 7 most-significant bit(s) in the port expression will be connected to GND.            ;
-; Register_DataOutBUS[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register:register_u6"                                                                              ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                                             ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Register_DataOutBUS ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Register:register_u5"                                                                                                                                                                               ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port                    ; Type   ; Severity ; Details                                                                                                                                                                          ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register_DataInBUS      ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; Register_DataOutBUS     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (8 bits) it drives.  The 7 most-significant bit(s) in the port expression will be connected to GND.            ;
-; Register_DataOutBUS[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register:register_u5"                                                                              ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                                             ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Register_DataOutBUS ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Register:register_u4"                                                                                                                                                                               ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port                    ; Type   ; Severity ; Details                                                                                                                                                                          ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register_DataInBUS      ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; Register_DataOutBUS     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (8 bits) it drives.  The 7 most-significant bit(s) in the port expression will be connected to GND.            ;
-; Register_DataOutBUS[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register:register_u4"                                                                              ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                                             ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Register_DataOutBUS ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Register:register_u3"                                                                                                                                                                               ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port                    ; Type   ; Severity ; Details                                                                                                                                                                          ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register_DataInBUS      ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; Register_DataOutBUS     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (8 bits) it drives.  The 7 most-significant bit(s) in the port expression will be connected to GND.            ;
-; Register_DataOutBUS[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register:register_u3"                                                                              ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                                             ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Register_DataOutBUS ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Register:register_u2"                                                                                                                                                                               ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port                    ; Type   ; Severity ; Details                                                                                                                                                                          ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register_DataInBUS      ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; Register_DataOutBUS     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (8 bits) it drives.  The 7 most-significant bit(s) in the port expression will be connected to GND.            ;
-; Register_DataOutBUS[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register:register_u2"                                                                              ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                                             ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Register_DataOutBUS ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Register:register_u1"                                                                                                                                                                               ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port                    ; Type   ; Severity ; Details                                                                                                                                                                          ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register_DataInBUS      ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; Register_DataOutBUS     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (8 bits) it drives.  The 7 most-significant bit(s) in the port expression will be connected to GND.            ;
-; Register_DataOutBUS[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register:register_u1"                                                                              ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                                             ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Register_DataOutBUS ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Register:register_u0"                                                                                                                                                                               ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port                    ; Type   ; Severity ; Details                                                                                                                                                                          ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register_DataInBUS      ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (1 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; Register_DataOutBUS     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (8 bits) it drives.  The 7 most-significant bit(s) in the port expression will be connected to GND.            ;
-; Register_DataOutBUS[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-+-------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Register:register_u0"                                                                                ;
++-----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                  ; Type   ; Severity ; Details                                                                             ;
++-----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Register_Reset_InHigh ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Register_DataOutBUS   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "spi_cnn_slave_8:spi_cnn_slave_8_u0"                                                                                                                                              ;
-+-----------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port            ; Type   ; Severity ; Details                                                                                                                                                               ;
-+-----------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; o_start_cnn     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (8 bits) it drives.  The 7 most-significant bit(s) in the port expression will be connected to GND. ;
-; o_start_cnn[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
-; o_row00[7..1]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
-; o_row01[7..1]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
-; o_row02[7..1]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
-; o_row03[7..1]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
-; o_row04[7..1]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
-; o_row05[7..1]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
-; o_row06[7..1]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
-; o_row07[7..1]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
-+-----------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "spi_cnn_slave_8:spi_cnn_slave_8_u0"                                                        ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; o_start_cnn ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -496,48 +526,39 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Feb  6 12:56:32 2026
+    Info: Processing started: Sat Feb 14 00:26:49 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CNNver1 -c CNNver1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/statemachine_image_loader.v
+    Info (12023): Found entity 1: SC_STATEMACHINE_IMAGE_LOADER File: C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl/STATEMACHINE_IMAGE_LOADER.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/register.v
-    Info (12023): Found entity 1: Register File: C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/rtl/Register.v Line: 1
+    Info (12023): Found entity 1: Register File: C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl/Register.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/spi_cnn_slave_8.v
-    Info (12023): Found entity 1: spi_cnn_slave_8 File: C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/rtl/spi_cnn_slave_8.v Line: 1
+    Info (12023): Found entity 1: spi_cnn_slave_8 File: C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl/spi_cnn_slave_8.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/weight_registers.v
-    Info (12023): Found entity 1: Weight_Registers File: C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/rtl/Weight_Registers.v Line: 1
+    Info (12023): Found entity 1: Weight_Registers File: C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl/Weight_Registers.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/cnn.v
-    Info (12023): Found entity 1: CNN File: C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/rtl/CNN.v Line: 1
+    Info (12023): Found entity 1: CNN File: C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl/CNN.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file cnnver1.v
-    Info (12023): Found entity 1: CNNver1 File: C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/CNNver1.v Line: 2
+    Info (12023): Found entity 1: CNNver1 File: C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/CNNver1.v Line: 2
 Info (12127): Elaborating entity "CNNver1" for the top level hierarchy
-Info (12128): Elaborating entity "spi_cnn_slave_8" for hierarchy "spi_cnn_slave_8:spi_cnn_slave_8_u0" File: C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/CNNver1.v Line: 54
-Warning (10036): Verilog HDL or VHDL warning at spi_cnn_slave_8.v(18): object "weight_mem" assigned a value but never read File: C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/rtl/spi_cnn_slave_8.v Line: 18
-Warning (10230): Verilog HDL assignment warning at spi_cnn_slave_8.v(52): truncated value with size 32 to match size of target (7) File: C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/rtl/spi_cnn_slave_8.v Line: 52
-Warning (10230): Verilog HDL assignment warning at spi_cnn_slave_8.v(59): truncated value with size 32 to match size of target (7) File: C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/rtl/spi_cnn_slave_8.v Line: 59
-Warning (10230): Verilog HDL assignment warning at spi_cnn_slave_8.v(66): truncated value with size 32 to match size of target (4) File: C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/rtl/spi_cnn_slave_8.v Line: 66
-Warning (10230): Verilog HDL assignment warning at spi_cnn_slave_8.v(76): truncated value with size 32 to match size of target (7) File: C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/rtl/spi_cnn_slave_8.v Line: 76
-Warning (10230): Verilog HDL assignment warning at spi_cnn_slave_8.v(90): truncated value with size 32 to match size of target (3) File: C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/rtl/spi_cnn_slave_8.v Line: 90
-Info (12128): Elaborating entity "Register" for hierarchy "Register:register_u0" File: C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/CNNver1.v Line: 62
-Warning (10230): Verilog HDL assignment warning at Register.v(24): truncated value with size 8 to match size of target (1) File: C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/rtl/Register.v Line: 24
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "CNNver1_Load_InLow" is missing source, defaulting to GND File: C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/CNNver1.v Line: 35
-    Warning (12110): Net "CNNver1_Reset_InHigh" is missing source, defaulting to GND File: C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/CNNver1.v Line: 36
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "CNNver1_Load_InLow" is missing source, defaulting to GND File: C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/CNNver1.v Line: 35
-    Warning (12110): Net "CNNver1_Reset_InHigh" is missing source, defaulting to GND File: C:/Users/jacob/Desktop/UNIC_CASS/CNNver1/CNNver1.v Line: 36
-Warning (12241): 9 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (12128): Elaborating entity "spi_cnn_slave_8" for hierarchy "spi_cnn_slave_8:spi_cnn_slave_8_u0" File: C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/CNNver1.v Line: 70
+Warning (10036): Verilog HDL or VHDL warning at spi_cnn_slave_8.v(23): object "weight_mem" assigned a value but never read File: C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl/spi_cnn_slave_8.v Line: 23
+Info (12128): Elaborating entity "SC_STATEMACHINE_IMAGE_LOADER" for hierarchy "spi_cnn_slave_8:spi_cnn_slave_8_u0|SC_STATEMACHINE_IMAGE_LOADER:loader_image_sm" File: C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/rtl/spi_cnn_slave_8.v Line: 54
+Info (12128): Elaborating entity "Register" for hierarchy "Register:register_u0" File: C:/Users/jacob/Desktop/UNIC_CASS/CNN4IC/CNNver1/CNNver1.v Line: 78
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 11 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 19 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 1 output pins
     Info (21061): Implemented 15 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 4890 megabytes
-    Info: Processing ended: Fri Feb  6 12:56:42 2026
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:25
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4887 megabytes
+    Info: Processing ended: Sat Feb 14 00:26:58 2026
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:24
 
 

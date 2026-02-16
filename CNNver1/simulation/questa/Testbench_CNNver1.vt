@@ -1,0 +1,134 @@
+`timescale 1 ns/ 1 ns
+module TB_SYSTEM();
+
+// ============================================
+// Parameter
+// ============================================
+	reg eachvec;
+	parameter TCK = 20; 
+	parameter CLK_FREQ = 1000000000 / TCK;
+	parameter DATAWIDTH_BUS = 8;
+	
+	integer ii = 0;
+	integer jj = 0;
+
+// ============================================
+// INTERNAL WIRE AND REG DECLARATIONS
+// ============================================
+	wire TB_SYSTEM_MISO;
+	reg TB_SYSTEM_CLOCK_50;
+	reg TB_SYSTEM_SS_N;
+	reg TB_SYSTEM_MOSI;
+	reg [7:0] test_matrix [0:7];
+
+// ============================================
+// UNIT UNDER TEST INSTANTIATION
+// ============================================
+	CNNver1 #(
+		.DATAWIDTH_BUS(DATAWIDTH_BUS)
+	) CNNver1_u0 (
+		.CNNver1_SPICLOCK_50(TB_SYSTEM_CLOCK_50),
+		.CNNver1_SS_N       (TB_SYSTEM_SS_N),
+		.CNNver1_MOSI       (TB_SYSTEM_MOSI),
+		.CNNver1_MISO       (TB_SYSTEM_MISO)
+	);
+
+// ============================================
+// INITIAL BLOCK: Setup y Display
+// ============================================
+initial                                                 
+begin                                                   
+	TB_SYSTEM_CLOCK_50 <= 0;
+	TB_SYSTEM_SS_N     <= 1'b1;
+	TB_SYSTEM_MOSI     <= 1'b0;
+	
+	test_matrix[0] = 8'hAA; test_matrix[1] = 8'hBB;
+	test_matrix[2] = 8'hCC; test_matrix[3] = 8'hDD;
+	test_matrix[4] = 8'hEE; test_matrix[5] = 8'hFF;
+	test_matrix[6] = 8'h11; test_matrix[7] = 8'h22;
+
+	$display("---------------------------------------------------");
+	$display("Running CNNver1 testbench - SPI 8x8 Image Loader");
+	$display("---------------------------------------------------");
+end                                                     
+
+// ============================================
+// CLOCK GENERATION
+// ============================================
+always                                                  
+	#(TCK/2) TB_SYSTEM_CLOCK_50 <= ~ TB_SYSTEM_CLOCK_50;
+
+// ============================================
+// TASK: Send SPI Byte (MSB First) con Retrasos
+// ============================================
+task send_byte;
+	input [7:0] byte_in;
+	begin
+		for (jj = 7; jj >= 0; jj = jj - 1) begin
+			// Cambiamos el dato en el flanco de bajada para que esté estable en el de subida
+			@(negedge TB_SYSTEM_CLOCK_50);
+			#2; // Pequeño retraso tras el flanco de bajada
+			TB_SYSTEM_MOSI = byte_in[jj];
+			@(posedge TB_SYSTEM_CLOCK_50);
+			#1; // Mantener un momento tras el flanco de subida
+		end
+	end
+endtask
+
+// ============================================
+// STIMULUS PROCESS
+// ============================================
+initial begin                                     
+	
+	#(TCK*10); // Aumentamos espera inicial
+	
+	// Fuerza un reset rápido para "limpiar" los registros de XX a 00
+	force CNNver1_u0.CNNver1_Reset_InHigh = 1'b1;
+	#40;
+	force CNNver1_u0.CNNver1_Reset_InHigh = 1'b0;
+	
+	// Inicio de transmisión SPI
+	@(negedge TB_SYSTEM_CLOCK_50);
+	#2;
+	TB_SYSTEM_SS_N <= 1'b0;
+	
+	// Enviar Comando LOAD IMAGE (00) - 2 bits con sincronía
+	// Bit 0
+	@(negedge TB_SYSTEM_CLOCK_50); #2; TB_SYSTEM_MOSI <= 1'b0;
+	@(posedge TB_SYSTEM_CLOCK_50);
+	// Bit 1
+	@(negedge TB_SYSTEM_CLOCK_50); #2; TB_SYSTEM_MOSI <= 1'b0;
+	@(posedge TB_SYSTEM_CLOCK_50);
+	
+	$display("[TIME %0t] Iniciando envio de bytes...", $time);
+	for (ii = 0; ii < 8; ii = ii + 1) begin
+		send_byte(test_matrix[ii]);
+		$display("[TIME %0t] Byte %0d enviado: %h", $time, ii, test_matrix[ii]);
+	end
+	
+	#(TCK);
+	@(negedge TB_SYSTEM_CLOCK_50);
+	#2;
+	
+	TB_SYSTEM_SS_N <= 1'b1;
+	
+	#(TCK*20);
+	
+	$display("---------------------------------------------------");
+	$display("VERIFICACION DE REGISTROS (Hardware Output):");
+	$display("Reg0: %h (Exp: AA) | Reg1: %h (Exp: BB)", CNNver1_u0.register_u0.Register_DataOutBUS, CNNver1_u0.register_u1.Register_DataOutBUS);
+	$display("Reg2: %h (Exp: CC) | Reg3: %h (Exp: DD)", CNNver1_u0.register_u2.Register_DataOutBUS, CNNver1_u0.register_u3.Register_DataOutBUS);
+	$display("Reg4: %h (Exp: EE) | Reg5: %h (Exp: FF)", CNNver1_u0.register_u4.Register_DataOutBUS, CNNver1_u0.register_u5.Register_DataOutBUS);
+	$display("Reg6: %h (Exp: 11) | Reg7: %h (Exp: 22)", CNNver1_u0.register_u6.Register_DataOutBUS, CNNver1_u0.register_u7.Register_DataOutBUS);
+	$display("---------------------------------------------------");
+
+	if (CNNver1_u0.register_u0.Register_DataOutBUS == 8'hAA && CNNver1_u0.register_u7.Register_DataOutBUS == 8'h22)
+		$display("RESULTADO: TEST PASSED");
+	else
+		$display("RESULTADO: TEST FAILED");
+
+	#(TCK*5);
+	$finish;                                              
+end                                                     
+
+endmodule
