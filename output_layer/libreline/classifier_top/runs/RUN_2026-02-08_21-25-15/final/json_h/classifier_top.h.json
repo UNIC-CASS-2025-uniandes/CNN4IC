@@ -1,0 +1,574 @@
+{
+  "creator": "Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 21.1.2 -fPIC -O3)",
+  "modules": {
+    "classifier_top": {
+      "attributes": {
+        "hdlname": "classifier_top",
+        "top": "00000000000000000000000000000001",
+        "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_top.v:4.1-28.10"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "rst_n": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "x_int4": {
+          "direction": "input",
+          "signed": 1,
+          "bits": [ 4, 5, 6, 7 ]
+        },
+        "w_int8": {
+          "direction": "input",
+          "signed": 1,
+          "bits": [ 8, 9, 10, 11, 12, 13, 14, 15 ]
+        },
+        "new_feat": {
+          "direction": "input",
+          "bits": [ 16 ]
+        },
+        "new_class": {
+          "direction": "input",
+          "bits": [ 17 ]
+        },
+        "class_id": {
+          "direction": "input",
+          "bits": [ 18, 19, 20 ]
+        },
+        "acc20": {
+          "direction": "output",
+          "signed": 1,
+          "bits": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 ]
+        },
+        "max_score": {
+          "direction": "output",
+          "signed": 1,
+          "bits": [ 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60 ]
+        },
+        "max_class": {
+          "direction": "output",
+          "bits": [ 61, 62, 63 ]
+        }
+      },
+      "cells": {
+        "$flatten\\u.$and$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_mac_argmax_modular.v:65$2": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_mac_argmax_modular.v:65.16-65.37"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 16 ],
+            "B": [ 64 ],
+            "Y": [ 65 ]
+          }
+        },
+        "$flatten\\u.$and$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_mac_argmax_modular.v:82$3": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_mac_argmax_modular.v:82.25-82.39"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 17 ],
+            "B": [ 66 ],
+            "Y": [ 67 ]
+          }
+        },
+        "$flatten\\u.$not$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_mac_argmax_modular.v:65$1": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_mac_argmax_modular.v:65.27-65.37"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 17 ],
+            "Y": [ 64 ]
+          }
+        },
+        "$flatten\\u.\\u_acc.$procdff$25": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000000000000000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000010100"
+          },
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:17.5-24.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87 ],
+            "Q": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 ]
+          }
+        },
+        "$flatten\\u.\\u_acc.$procmux$11": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000010100"
+          },
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:22.18-22.22|/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:22.14-23.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 ],
+            "B": [ 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107 ],
+            "S": [ 65 ],
+            "Y": [ 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127 ]
+          }
+        },
+        "$flatten\\u.\\u_acc.$procmux$14": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000010100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:20.18-20.21|/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:20.14-23.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ 17 ],
+            "Y": [ 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87 ]
+          }
+        },
+        "$flatten\\u.\\u_add.$add$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/add_int12_int20_to_int20.v:17$9": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000010100",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000010100",
+            "Y_WIDTH": "00000000000000000000000000010100"
+          },
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/add_int12_int20_to_int20.v:17.20-17.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 ],
+            "B": [ 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 139, 139, 139, 139, 139, 139, 139, 139 ],
+            "Y": [ 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107 ]
+          }
+        },
+        "$flatten\\u.\\u_cmp.$gt$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/cmp_gt_int20.v:7$8": {
+          "hide_name": 1,
+          "type": "$gt",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000010100",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000010100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/cmp_gt_int20.v:7.18-7.23"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 ],
+            "B": [ 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60 ],
+            "Y": [ 66 ]
+          }
+        },
+        "$flatten\\u.\\u_max_class.$procdff$30": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:12.5-16.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 140, 141, 142 ],
+            "Q": [ 61, 62, 63 ]
+          }
+        },
+        "$flatten\\u.\\u_max_class.$procmux$16": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:15.18-15.22|/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:15.14-15.31"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 61, 62, 63 ],
+            "B": [ 18, 19, 20 ],
+            "S": [ 67 ],
+            "Y": [ 143, 144, 145 ]
+          }
+        },
+        "$flatten\\u.\\u_max_class.$procmux$19": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:14.18-14.21|/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:14.14-15.31"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 143, 144, 145 ],
+            "B": [ "0", "0", "0" ],
+            "S": [ "0" ],
+            "Y": [ 140, 141, 142 ]
+          }
+        },
+        "$flatten\\u.\\u_max_score.$procdff$25": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000000",
+            "ARST_VALUE": "00000000000000000000",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000010100"
+          },
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:17.5-24.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165 ],
+            "Q": [ 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60 ]
+          }
+        },
+        "$flatten\\u.\\u_max_score.$procmux$11": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000010100"
+          },
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:22.18-22.22|/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:22.14-23.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60 ],
+            "B": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 ],
+            "S": [ 67 ],
+            "Y": [ 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185 ]
+          }
+        },
+        "$flatten\\u.\\u_max_score.$procmux$14": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000010100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:20.18-20.21|/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:20.14-23.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185 ],
+            "B": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "S": [ "0" ],
+            "Y": [ 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165 ]
+          }
+        },
+        "$flatten\\u.\\u_mul.$mul$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/mul_int4_int8_to_int12.v:11$10": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000001",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000001",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000001100"
+          },
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/mul_int4_int8_to_int12.v:11.16-11.21"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4, 5, 6, 7 ],
+            "B": [ 8, 9, 10, 11, 12, 13, 14, 15 ],
+            "Y": [ 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139 ]
+          }
+        }
+      },
+      "netnames": {
+        "$flatten\\u.$not$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_mac_argmax_modular.v:65$1_Y": {
+          "hide_name": 1,
+          "bits": [ 64 ],
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_mac_argmax_modular.v:65.27-65.37"
+          }
+        },
+        "$flatten\\u.\\u_acc.$0\\q[19:0]": {
+          "hide_name": 1,
+          "bits": [ 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87 ],
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:17.5-24.8"
+          }
+        },
+        "$flatten\\u.\\u_acc.$procmux$11_Y": {
+          "hide_name": 1,
+          "bits": [ 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u.\\u_max_class.$0\\q[2:0]": {
+          "hide_name": 1,
+          "bits": [ 140, 141, 142 ],
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:12.5-16.8"
+          }
+        },
+        "$flatten\\u.\\u_max_class.$procmux$16_Y": {
+          "hide_name": 1,
+          "bits": [ 143, 144, 145 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\u.\\u_max_score.$0\\q[19:0]": {
+          "hide_name": 1,
+          "bits": [ 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165 ],
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:17.5-24.8"
+          }
+        },
+        "$flatten\\u.\\u_max_score.$procmux$11_Y": {
+          "hide_name": 1,
+          "bits": [ 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185 ],
+          "attributes": {
+          }
+        },
+        "acc20": {
+          "hide_name": 0,
+          "bits": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 ],
+          "signed": 1,
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_top.v:12.29-12.34"
+          }
+        },
+        "class_id": {
+          "hide_name": 0,
+          "bits": [ 18, 19, 20 ],
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_top.v:11.21-11.29"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_top.v:5.15-5.18"
+          }
+        },
+        "max_class": {
+          "hide_name": 0,
+          "bits": [ 61, 62, 63 ],
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_top.v:14.21-14.30"
+          }
+        },
+        "max_score": {
+          "hide_name": 0,
+          "bits": [ 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60 ],
+          "signed": 1,
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_top.v:13.29-13.38"
+          }
+        },
+        "new_class": {
+          "hide_name": 0,
+          "bits": [ 17 ],
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_top.v:10.15-10.24"
+          }
+        },
+        "new_feat": {
+          "hide_name": 0,
+          "bits": [ 16 ],
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_top.v:9.15-9.23"
+          }
+        },
+        "rst_n": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_top.v:6.15-6.20"
+          }
+        },
+        "u.gt": {
+          "hide_name": 0,
+          "bits": [ 66 ],
+          "attributes": {
+            "hdlname": "u gt",
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_mac_argmax_modular.v:34.24-34.26"
+          }
+        },
+        "u.prod12": {
+          "hide_name": 0,
+          "bits": [ 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u prod12",
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_mac_argmax_modular.v:29.24-29.30"
+          }
+        },
+        "u.sum20": {
+          "hide_name": 0,
+          "bits": [ 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107 ],
+          "signed": 1,
+          "attributes": {
+            "hdlname": "u sum20",
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_mac_argmax_modular.v:31.24-31.29"
+          }
+        },
+        "u.u_acc.load": {
+          "hide_name": 0,
+          "bits": [ 65 ],
+          "attributes": {
+            "hdlname": "u u_acc load",
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:13.31-13.35"
+          }
+        },
+        "u.u_max_class.load": {
+          "hide_name": 0,
+          "bits": [ 67 ],
+          "attributes": {
+            "hdlname": "u u_max_class load",
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:8.27-8.31"
+          }
+        },
+        "w_int8": {
+          "hide_name": 0,
+          "bits": [ 8, 9, 10, 11, 12, 13, 14, 15 ],
+          "signed": 1,
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_top.v:8.29-8.35"
+          }
+        },
+        "x_int4": {
+          "hide_name": 0,
+          "bits": [ 4, 5, 6, 7 ],
+          "signed": 1,
+          "attributes": {
+            "src": "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_top.v:7.29-7.35"
+          }
+        }
+      }
+    }
+  }
+}

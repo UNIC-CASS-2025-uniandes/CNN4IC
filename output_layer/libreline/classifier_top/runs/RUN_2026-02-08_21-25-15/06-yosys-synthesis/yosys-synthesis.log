@@ -1,0 +1,1246 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 21.1.2 -fPIC -O3)
+
+1. Executing Liberty frontend: /opt/pdks/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib
+Imported 84 cell types from liberty file.
+
+2. Executing Liberty frontend: /opt/pdks/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_typ_1p2V_3p3V_25C.lib
+Imported 15 cell types from liberty file.
+[INFO] Using SDC file '/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/06-yosys-synthesis/synthesis.abc.sdc' for ABC…wtaf
+
+3. Executing Verilog-2005 frontend: /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_top.v
+Parsing SystemVerilog input from `/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_top.v' to AST representation.
+verilog frontend filename /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_top.v
+Storing AST representation for module `$abstract\classifier_top'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_mac_argmax_modular.v
+Parsing SystemVerilog input from `/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_mac_argmax_modular.v' to AST representation.
+verilog frontend filename /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_mac_argmax_modular.v
+Storing AST representation for module `$abstract\classifier_mac_argmax_modular'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/mul_int4_int8_to_int12.v
+Parsing SystemVerilog input from `/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/mul_int4_int8_to_int12.v' to AST representation.
+verilog frontend filename /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/mul_int4_int8_to_int12.v
+Storing AST representation for module `$abstract\mul_int4_int8_to_int12'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/add_int12_int20_to_int20.v
+Parsing SystemVerilog input from `/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/add_int12_int20_to_int20.v' to AST representation.
+verilog frontend filename /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/add_int12_int20_to_int20.v
+Storing AST representation for module `$abstract\add_int12_int20_to_int20'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/cmp_gt_int20.v
+Parsing SystemVerilog input from `/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/cmp_gt_int20.v' to AST representation.
+verilog frontend filename /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/cmp_gt_int20.v
+Storing AST representation for module `$abstract\cmp_gt_int20'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v
+Parsing SystemVerilog input from `/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v' to AST representation.
+verilog frontend filename /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v
+Storing AST representation for module `$abstract\reg_int20_clr_load'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v
+Parsing SystemVerilog input from `/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v' to AST representation.
+verilog frontend filename /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v
+Storing AST representation for module `$abstract\reg_intN_clr_load'.
+Successfully finished Verilog frontend.
+
+10. Executing HIERARCHY pass (managing design hierarchy).
+
+11. Executing AST frontend in derive mode using pre-parsed AST for module `\classifier_top'.
+Generating RTLIL representation for module `\classifier_top'.
+
+11.1. Analyzing design hierarchy..
+Top module:  \classifier_top
+Parameter \CLASS_BITS = 3
+
+11.2. Executing AST frontend in derive mode using pre-parsed AST for module `\classifier_mac_argmax_modular'.
+Parameter \CLASS_BITS = 3
+Generating RTLIL representation for module `$paramod\classifier_mac_argmax_modular\CLASS_BITS=s32'00000000000000000000000000000011'.
+
+11.3. Analyzing design hierarchy..
+Top module:  \classifier_top
+Used module:     $paramod\classifier_mac_argmax_modular\CLASS_BITS=s32'00000000000000000000000000000011
+Parameter \N = 3
+
+11.4. Executing AST frontend in derive mode using pre-parsed AST for module `\reg_intN_clr_load'.
+Parameter \N = 3
+Generating RTLIL representation for module `$paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011'.
+
+11.5. Executing AST frontend in derive mode using pre-parsed AST for module `\reg_int20_clr_load'.
+Generating RTLIL representation for module `\reg_int20_clr_load'.
+
+11.6. Executing AST frontend in derive mode using pre-parsed AST for module `\cmp_gt_int20'.
+Generating RTLIL representation for module `\cmp_gt_int20'.
+
+11.7. Executing AST frontend in derive mode using pre-parsed AST for module `\add_int12_int20_to_int20'.
+Generating RTLIL representation for module `\add_int12_int20_to_int20'.
+
+11.8. Executing AST frontend in derive mode using pre-parsed AST for module `\mul_int4_int8_to_int12'.
+Generating RTLIL representation for module `\mul_int4_int8_to_int12'.
+
+11.9. Analyzing design hierarchy..
+Top module:  \classifier_top
+Used module:     $paramod\classifier_mac_argmax_modular\CLASS_BITS=s32'00000000000000000000000000000011
+Used module:         $paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011
+Used module:         \reg_int20_clr_load
+Used module:         \cmp_gt_int20
+Used module:         \add_int12_int20_to_int20
+Used module:         \mul_int4_int8_to_int12
+
+11.10. Analyzing design hierarchy..
+Top module:  \classifier_top
+Used module:     $paramod\classifier_mac_argmax_modular\CLASS_BITS=s32'00000000000000000000000000000011
+Used module:         $paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011
+Used module:         \reg_int20_clr_load
+Used module:         \cmp_gt_int20
+Used module:         \add_int12_int20_to_int20
+Used module:         \mul_int4_int8_to_int12
+Removing unused module `$abstract\reg_intN_clr_load'.
+Removing unused module `$abstract\reg_int20_clr_load'.
+Removing unused module `$abstract\cmp_gt_int20'.
+Removing unused module `$abstract\add_int12_int20_to_int20'.
+Removing unused module `$abstract\mul_int4_int8_to_int12'.
+Removing unused module `$abstract\classifier_mac_argmax_modular'.
+Removing unused module `$abstract\classifier_top'.
+Removed 7 unused modules.
+Renaming module classifier_top to classifier_top.
+
+12. Executing ATTRMAP pass (move or copy attributes).
+
+13. Executing TRIBUF pass.
+
+14. Executing HIERARCHY pass (managing design hierarchy).
+
+14.1. Analyzing design hierarchy..
+Top module:  \classifier_top
+Used module:     $paramod\classifier_mac_argmax_modular\CLASS_BITS=s32'00000000000000000000000000000011
+Used module:         $paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011
+Used module:         \reg_int20_clr_load
+Used module:         \cmp_gt_int20
+Used module:         \add_int12_int20_to_int20
+Used module:         \mul_int4_int8_to_int12
+
+14.2. Analyzing design hierarchy..
+Top module:  \classifier_top
+Used module:     $paramod\classifier_mac_argmax_modular\CLASS_BITS=s32'00000000000000000000000000000011
+Used module:         $paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011
+Used module:         \reg_int20_clr_load
+Used module:         \cmp_gt_int20
+Used module:         \add_int12_int20_to_int20
+Used module:         \mul_int4_int8_to_int12
+Removed 0 unused modules.
+
+15. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+16. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:17$6 in module reg_int20_clr_load.
+Marked 2 switch rules as full_case in process $proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:12$4 in module $paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011.
+Removed a total of 0 dead cases.
+
+17. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+18. Executing PROC_INIT pass (extract init attributes).
+
+19. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\reg_int20_clr_load.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:17$6'.
+Found async reset \rst_n in `$paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:12$4'.
+
+20. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~4 debug messages>
+
+21. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\reg_int20_clr_load.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:17$6'.
+     1/1: $0\q[19:0]
+Creating decoders for process `$paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:12$4'.
+     1/1: $0\q[2:0]
+
+22. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+23. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\reg_int20_clr_load.\q' using process `\reg_int20_clr_load.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:17$6'.
+  created $adff cell `$procdff$25' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011.\q' using process `$paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:12$4'.
+  created $adff cell `$procdff$30' with positive edge clock and positive level reset.
+
+24. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+25. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\reg_int20_clr_load.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:17$6'.
+Removing empty process `reg_int20_clr_load.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:17$6'.
+Found and cleaned up 2 empty switches in `$paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:12$4'.
+Removing empty process `$paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:12$4'.
+Cleaned up 4 empty switches.
+
+26. Executing CHECK pass (checking for obvious problems).
+Checking module classifier_top...
+Checking module add_int12_int20_to_int20...
+Checking module cmp_gt_int20...
+Checking module reg_int20_clr_load...
+Checking module $paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011...
+Checking module $paramod\classifier_mac_argmax_modular\CLASS_BITS=s32'00000000000000000000000000000011...
+Checking module mul_int4_int8_to_int12...
+Found and reported 0 problems.
+
+27. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+Optimizing module add_int12_int20_to_int20.
+Optimizing module cmp_gt_int20.
+Optimizing module reg_int20_clr_load.
+<suppressed ~2 debug messages>
+Optimizing module $paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011.
+<suppressed ~2 debug messages>
+Optimizing module $paramod\classifier_mac_argmax_modular\CLASS_BITS=s32'00000000000000000000000000000011.
+Optimizing module mul_int4_int8_to_int12.
+
+28. Executing FLATTEN pass (flatten design).
+Deleting now unused module add_int12_int20_to_int20.
+Deleting now unused module cmp_gt_int20.
+Deleting now unused module reg_int20_clr_load.
+Deleting now unused module $paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011.
+Deleting now unused module $paramod\classifier_mac_argmax_modular\CLASS_BITS=s32'00000000000000000000000000000011.
+Deleting now unused module mul_int4_int8_to_int12.
+<suppressed ~7 debug messages>
+
+29. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+<suppressed ~2 debug messages>
+
+30. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+Removed 6 unused cells and 25 unused wires.
+<suppressed ~7 debug messages>
+
+31. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+
+32. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\classifier_top'.
+Removed a total of 0 cells.
+
+33. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \classifier_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+34. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \classifier_top.
+Performed a total of 0 changes.
+
+35. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\classifier_top'.
+Removed a total of 0 cells.
+
+36. Executing OPT_DFF pass (perform DFF optimizations).
+
+37. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+
+38. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+
+39. Executing FSM pass (extract and optimize FSM).
+
+39.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+39.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+39.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+39.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+
+39.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+39.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+39.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+39.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+40. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+
+41. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\classifier_top'.
+Removed a total of 0 cells.
+
+42. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \classifier_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+43. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \classifier_top.
+Performed a total of 0 changes.
+
+44. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\classifier_top'.
+Removed a total of 0 cells.
+
+45. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $flatten\u.\u_max_score.$procdff$25 ($adff) from module classifier_top (D = \u.u_acc.q, Q = \u.u_max_score.q).
+Adding EN signal on $flatten\u.\u_max_class.$procdff$30 ($adff) from module classifier_top (D = \class_id, Q = \u.u_max_class.q).
+Adding EN signal on $flatten\u.\u_acc.$procdff$25 ($adff) from module classifier_top (D = $flatten\u.\u_acc.$0\q[19:0], Q = \u.u_acc.q).
+
+46. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+Removed 2 unused cells and 2 unused wires.
+<suppressed ~3 debug messages>
+
+47. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+<suppressed ~1 debug messages>
+
+48. Rerunning OPT passes. (Maybe there is more to do…)
+
+49. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \classifier_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+50. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \classifier_top.
+Performed a total of 0 changes.
+
+51. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\classifier_top'.
+Removed a total of 0 cells.
+
+52. Executing OPT_DFF pass (perform DFF optimizations).
+
+53. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+
+54. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+
+55. Executing WREDUCE pass (reducing word size of cells).
+Removed top 8 bits (of 20) from port B of cell classifier_top.$flatten\u.\u_add.$add$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/add_int12_int20_to_int20.v:17$9 ($add).
+
+56. Executing PEEPOPT pass (run peephole optimizers).
+
+57. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+
+58. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module classifier_top:
+  creating $macc model for $flatten\u.\u_add.$add$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/add_int12_int20_to_int20.v:17$9 ($add).
+  creating $macc model for $flatten\u.\u_mul.$mul$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/mul_int4_int8_to_int12.v:11$10 ($mul).
+  merging $macc model for $flatten\u.\u_mul.$mul$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/mul_int4_int8_to_int12.v:11$10 into $flatten\u.\u_add.$add$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/add_int12_int20_to_int20.v:17$9.
+  creating $macc cell for $flatten\u.\u_add.$add$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/add_int12_int20_to_int20.v:17$9: $auto$alumacc.cc:382:replace_macc$43
+  creating $alu model for $flatten\u.\u_cmp.$gt$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/cmp_gt_int20.v:7$8 ($gt): new $alu
+  creating $alu cell for $flatten\u.\u_cmp.$gt$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/cmp_gt_int20.v:7$8: $auto$alumacc.cc:512:replace_alu$45
+  created 1 $alu and 1 $macc cells.
+
+59. Executing SHARE pass (SAT-based resource sharing).
+
+60. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+
+61. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\classifier_top'.
+Removed a total of 0 cells.
+
+62. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \classifier_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+63. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \classifier_top.
+Performed a total of 0 changes.
+
+64. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\classifier_top'.
+Removed a total of 0 cells.
+
+65. Executing OPT_DFF pass (perform DFF optimizations).
+
+66. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+Removed 1 unused cells and 5 unused wires.
+<suppressed ~6 debug messages>
+
+67. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+
+68. Rerunning OPT passes. (Maybe there is more to do…)
+
+69. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \classifier_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+70. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \classifier_top.
+Performed a total of 0 changes.
+
+71. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\classifier_top'.
+Removed a total of 0 cells.
+
+72. Executing OPT_DFF pass (perform DFF optimizations).
+
+73. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+
+74. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+
+75. Executing MEMORY pass.
+
+75.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+75.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+75.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+75.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+75.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+75.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+
+75.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+75.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+75.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+
+75.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+76. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+
+77. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+<suppressed ~1 debug messages>
+
+78. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\classifier_top'.
+Removed a total of 0 cells.
+
+79. Executing OPT_DFF pass (perform DFF optimizations).
+
+80. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+81. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+82. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+
+83. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\classifier_top'.
+Removed a total of 0 cells.
+
+84. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \classifier_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+85. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \classifier_top.
+Performed a total of 0 changes.
+
+86. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\classifier_top'.
+Removed a total of 0 cells.
+
+87. Executing OPT_SHARE pass.
+
+88. Executing OPT_DFF pass (perform DFF optimizations).
+
+89. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+
+90. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+
+91. Executing TECHMAP pass (map to technology primitives).
+
+91.1. Executing Verilog-2005 frontend: /nix/store/zlx8k2adfi2x3iglj8r5wkb3fg9k6s2f-yosys-0.60/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/zlx8k2adfi2x3iglj8r5wkb3fg9k6s2f-yosys-0.60/bin/../share/yosys/techmap.v' to AST representation.
+verilog frontend filename /nix/store/zlx8k2adfi2x3iglj8r5wkb3fg9k6s2f-yosys-0.60/bin/../share/yosys/techmap.v
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `\$connect'.
+Generating RTLIL representation for module `\$input_port'.
+Successfully finished Verilog frontend.
+
+91.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod$c5b9a035a8d3d1a42a45840811b1f11f19722d80\_90_alu for cells of type $alu.
+Using extmapper maccmap for cells of type $macc_v2.
+  add \w_int8 * \x_int4 (8x4 bits, signed)
+  add \u.u_acc.q (20 bits, signed)
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000010100 for cells of type $fa.
+Using template $paramod$6fc37af1c109ae54e8aed83fcd995c12d378ce93\_90_alu for cells of type $alu.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000010100 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+No more expansions possible.
+<suppressed ~484 debug messages>
+
+92. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+<suppressed ~276 debug messages>
+
+93. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\classifier_top'.
+<suppressed ~378 debug messages>
+Removed a total of 126 cells.
+
+94. Executing OPT_DFF pass (perform DFF optimizations).
+
+95. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+Removed 77 unused cells and 159 unused wires.
+<suppressed ~78 debug messages>
+
+96. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+
+97. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\classifier_top'.
+Removed a total of 0 cells.
+
+98. Executing OPT_DFF pass (perform DFF optimizations).
+
+99. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+
+100. Executing ABC pass (technology mapping using ABC).
+
+100.1. Extracting gate netlist of module `\classifier_top' to `<abc-temp-dir>/input.blif'..
+
+100.1.1. Executed ABC.
+Extracted 552 gates and 607 wires to a netlist network with 54 inputs and 22 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Jan  1 1980 00:00:00)
+ABC: abc 01> abc 01> + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library /tmp/yosys-abc-AK3P7r/stdcells.genlib 
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+
+100.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       18
+ABC RESULTS:            ANDNOT cells:      213
+ABC RESULTS:               MUX cells:        1
+ABC RESULTS:              NAND cells:       17
+ABC RESULTS:               NOR cells:       10
+ABC RESULTS:               NOT cells:       37
+ABC RESULTS:                OR cells:       61
+ABC RESULTS:             ORNOT cells:       36
+ABC RESULTS:              XNOR cells:       22
+ABC RESULTS:               XOR cells:      136
+ABC RESULTS:        internal signals:      531
+ABC RESULTS:           input signals:       54
+ABC RESULTS:          output signals:       22
+Removing temp directory.
+** cmd error: unknown command 'abc'
+(this is likely caused by using an alias defined in "abc.rc"
+without having this file in the current or parent directory)
+Removing global temp directory.
+
+101. Executing OPT pass (performing simple optimizations).
+
+101.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+
+101.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\classifier_top'.
+Removed a total of 0 cells.
+
+101.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+101.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+Removed 0 unused cells and 189 unused wires.
+<suppressed ~7 debug messages>
+
+101.5. Finished fast OPT passes.
+
+102. Executing HIERARCHY pass (managing design hierarchy).
+
+102.1. Analyzing design hierarchy..
+Top module:  \classifier_top
+
+102.2. Analyzing design hierarchy..
+Top module:  \classifier_top
+Removed 0 unused modules.
+
+103. Executing CHECK pass (checking for obvious problems).
+Checking module classifier_top...
+Found and reported 0 problems.
+
+104. Printing statistics.
+
+=== classifier_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      594 wires
+      864 wire bits
+       44 public wires
+      314 public wire bits
+       10 ports
+       62 port bits
+      601 cells
+      213   $_ANDNOT_
+       18   $_AND_
+       43   $_DFFE_PN0P_
+        1   $_MUX_
+       17   $_NAND_
+       10   $_NOR_
+       37   $_NOT_
+       36   $_ORNOT_
+       61   $_OR_
+       22   $_XNOR_
+      136   $_XOR_
+        7   $scopeinfo
+
+105. Executing OPT pass (performing simple optimizations).
+
+105.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+
+105.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\classifier_top'.
+Removed a total of 0 cells.
+
+105.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \classifier_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+105.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \classifier_top.
+Performed a total of 0 changes.
+
+105.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\classifier_top'.
+Removed a total of 0 cells.
+
+105.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+105.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+
+105.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+
+105.9. Finished fast OPT passes. (There is nothing left to do.)
+
+106. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+Removed 7 unused cells and 33 unused wires.
+<suppressed ~40 debug messages>
+{
+   "creator": "Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 21.1.2 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/tmp/ea627f1dee61499f8c2c70099a616413.lib -liberty /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/tmp/2cecd0f00efb460f9e0879d2a8cd8115.lib ",
+   "modules": {
+      "\\classifier_top": {
+         "num_wires":         561,
+         "num_wire_bits":     613,
+         "num_pub_wires":     11,
+         "num_pub_wire_bits": 63,
+         "num_ports":         10,
+         "num_port_bits":     62,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         594,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 213,
+            "$_AND_": 18,
+            "$_DFFE_PN0P_": 43,
+            "$_MUX_": 1,
+            "$_NAND_": 17,
+            "$_NOR_": 10,
+            "$_NOT_": 37,
+            "$_ORNOT_": 36,
+            "$_OR_": 61,
+            "$_XNOR_": 22,
+            "$_XOR_": 136
+         }
+      }
+   },
+      "design": {
+         "num_wires":         561,
+         "num_wire_bits":     613,
+         "num_pub_wires":     11,
+         "num_pub_wire_bits": 63,
+         "num_ports":         10,
+         "num_port_bits":     62,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         594,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 213,
+            "$_AND_": 18,
+            "$_DFFE_PN0P_": 43,
+            "$_MUX_": 1,
+            "$_NAND_": 17,
+            "$_NOR_": 10,
+            "$_NOT_": 37,
+            "$_ORNOT_": 36,
+            "$_OR_": 61,
+            "$_XNOR_": 22,
+            "$_XOR_": 136
+         }
+      }
+}
+
+107. Printing statistics.
+
+=== classifier_top ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      561 wires
+      613 wire bits
+       11 public wires
+       63 public wire bits
+       10 ports
+       62 port bits
+      594 cells
+      213   $_ANDNOT_
+       18   $_AND_
+       43   $_DFFE_PN0P_
+        1   $_MUX_
+       17   $_NAND_
+       10   $_NOR_
+       37   $_NOT_
+       36   $_ORNOT_
+       61   $_OR_
+       22   $_XNOR_
+      136   $_XOR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFFE_PN0P_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+[INFO] Applying tri-state buffer mapping from '/opt/pdks/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/tribuff_map.v'…
+
+108. Executing TECHMAP pass (map to technology primitives).
+
+108.1. Executing Verilog-2005 frontend: /opt/pdks/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/tribuff_map.v
+Parsing Verilog input from `/opt/pdks/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/tribuff_map.v' to AST representation.
+verilog frontend filename /opt/pdks/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/tribuff_map.v
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+108.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+109. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+[INFO] Applying latch mapping from '/opt/pdks/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/latch_map.v'…
+
+110. Executing TECHMAP pass (map to technology primitives).
+
+110.1. Executing Verilog-2005 frontend: /opt/pdks/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/latch_map.v
+Parsing Verilog input from `/opt/pdks/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/latch_map.v' to AST representation.
+verilog frontend filename /opt/pdks/ciel/ihp-sg13g2/versions/c4b8b4e5e7a05f375cca3815d51b3a37721fbf5c/ihp-sg13g2/libs.tech/librelane/sg13g2_stdcell/latch_map.v
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_PN0_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_NN0_'.
+Successfully finished Verilog frontend.
+
+110.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+111. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+112. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sg13g2_dfrbpq_1 (noninv, pins=4, area=48.99) is a direct match for cell type $_DFF_PN0_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    unmapped dff cell: $_DFF_P_
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sg13g2_dfrbpq_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    unmapped dff cell: $_DFF_PN1_
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFE_NN_
+    unmapped dff cell: $_DFFE_NP_
+    unmapped dff cell: $_DFFE_PN_
+    unmapped dff cell: $_DFFE_PP_
+    unmapped dff cell: $_DFFSR_NNN_
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+112.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+<suppressed ~4 debug messages>
+Mapping DFF cells in module `\classifier_top':
+  mapped 43 $_DFF_PN0_ cells to \sg13g2_dfrbpq_1 cells.
+{
+   "creator": "Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 21.1.2 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/tmp/ea627f1dee61499f8c2c70099a616413.lib -liberty /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/tmp/2cecd0f00efb460f9e0879d2a8cd8115.lib ",
+   "modules": {
+      "\\classifier_top": {
+         "num_wires":         604,
+         "num_wire_bits":     656,
+         "num_pub_wires":     11,
+         "num_pub_wire_bits": 63,
+         "num_ports":         10,
+         "num_port_bits":     62,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         637,
+         "num_submodules":       0,
+         "area":              2106.518400,
+         "sequential_area":    2106.518400,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 213,
+            "$_AND_": 18,
+            "$_MUX_": 44,
+            "$_NAND_": 17,
+            "$_NOR_": 10,
+            "$_NOT_": 37,
+            "$_ORNOT_": 36,
+            "$_OR_": 61,
+            "$_XNOR_": 22,
+            "$_XOR_": 136,
+            "sg13g2_dfrbpq_1": 43
+         }
+      }
+   },
+      "design": {
+         "num_wires":         604,
+         "num_wire_bits":     656,
+         "num_pub_wires":     11,
+         "num_pub_wire_bits": 63,
+         "num_ports":         10,
+         "num_port_bits":     62,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         637,
+         "num_submodules":       0,
+         "area":              2106.518400,
+         "sequential_area":    2106.518400,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 213,
+            "$_AND_": 18,
+            "$_MUX_": 44,
+            "$_NAND_": 17,
+            "$_NOR_": 10,
+            "$_NOT_": 37,
+            "$_ORNOT_": 36,
+            "$_OR_": 61,
+            "$_XNOR_": 22,
+            "$_XOR_": 136,
+            "sg13g2_dfrbpq_1": 43
+         }
+      }
+}
+
+113. Printing statistics.
+
+=== classifier_top ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      604        - wires
+      656        - wire bits
+       11        - public wires
+       63        - public wire bits
+       10        - ports
+       62        - port bits
+      637 2.11E+03 cells
+      213        -   $_ANDNOT_
+       18        -   $_AND_
+       44        -   $_MUX_
+       17        -   $_NAND_
+       10        -   $_NOR_
+       37        -   $_NOT_
+       36        -   $_ORNOT_
+       61        -   $_OR_
+       22        -   $_XNOR_
+      136        -   $_XOR_
+       43 2.11E+03   sg13g2_dfrbpq_1
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+
+   Chip area for module '\classifier_top': 2106.518400
+     of which used for sequential elements: 2106.518400 (100.00%)
+
+[INFO] Using generated ABC script '/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/06-yosys-synthesis/AREA_0.abc'…
+
+114. Executing ABC pass (technology mapping using ABC).
+
+114.1. Extracting gate netlist of module `\classifier_top' to `/tmp/yosys-abc-aOURd8/input.blif'..
+
+114.1.1. Executed ABC.
+Extracted 594 gates and 654 wires to a netlist network with 60 inputs and 43 outputs.
+Running ABC script: /tmp/yosys-abc-aOURd8/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Jan  1 1980 00:00:00)
+ABC: abc 01> abc 01> + read_blif /tmp/yosys-abc-aOURd8/input.blif 
+ABC: + read_lib -w /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/tmp/ea627f1dee61499f8c2c70099a616413.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.01 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_antennanp" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_decap_4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_decap_8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dfrbpq_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dfrbpq_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dlhq_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dlhr_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dlhrq_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dllr_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_dllrq_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sg13g2_ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sg13g2_ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sg13g2_ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sg13g2_einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sg13g2_einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sg13g2_einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_fill_1" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_fill_2" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_fill_4" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_fill_8" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_sdfrbpq_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sg13g2_sdfrbpq_2".
+ABC: Library "sg13g2_stdcell_typ_1p20V_25C" from "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/tmp/ea627f1dee61499f8c2c70099a616413.lib" has 54 cells (25 skipped: 12 seq; 6 tri-state; 0 no func; 7 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.01 sec
+ABC: Memory =    2.63 MB. Time =     0.01 sec
+ABC: + read_lib -m -w /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/tmp/2cecd0f00efb460f9e0879d2a8cd8115.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.00 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadIOVdd" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadIOVss" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadIn" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadInOut16mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadInOut30mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadInOut4mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadOut16mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadOut30mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadOut4mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadTriOut16mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadTriOut30mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadTriOut4mA" due to dont_use attribute.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadVdd" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadVss" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sg13g2_IOPadAnalog" due to dont_use attribute.
+ABC: Library "sg13g2_io_typ_1p2V_3p3V_25C" from "/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/tmp/2cecd0f00efb460f9e0879d2a8cd8115.lib" has 0 cells (15 skipped: 0 seq; 0 tri-state; 4 no func; 11 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.00 sec
+ABC: Memory =    0.38 MB. Time =     0.00 sec
+ABC: Updated library "sg13g2_stdcell_typ_1p20V_25C" with additional 0 cells from library "sg13g2_io_typ_1p2V_3p3V_25C".
+ABC: + read_constr -v /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: Setting driving cell to be "sg13g2_buf_4/X".
+ABC: Setting output load to be 6.000000.
+ABC: + source /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/06-yosys-synthesis/AREA_0.abc 
+ABC: Error: The network is combinational.
+ABC: Cannot find the default PI driving cell (sg13g2_buf_4/X) in the library.
+ABC: WireLoad = "none"  Gates =    494 (  7.3 %)   Cap =  7.6 ff (  1.7 %)   Area =     4936.38 ( 96.6 %)   Delay =  2194.19 ps  (  6.9 %)               
+ABC: Path  0 --      49 : 0   10 pi              A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  24.7 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --     212 : 2    3 sg13g2_nor2b_1  A =   9.07  Df = 126.9  -51.2 ps  S = 114.0 ps  Cin =  2.6 ff  Cout =  11.8 ff  Cmax = 300.0 ff  G =  444  
+ABC: Path  2 --     216 : 2    1 sg13g2_xnor2_1  A =  14.52  Df = 256.9  -79.1 ps  S =  80.2 ps  Cin =  5.4 ff  Cout =   5.1 ff  Cmax = 300.0 ff  G =   95  
+ABC: Path  3 --     217 : 2    2 sg13g2_xnor2_1  A =  14.52  Df = 387.5  -95.3 ps  S = 104.8 ps  Cin =  5.4 ff  Cout =   8.2 ff  Cmax = 300.0 ff  G =  150  
+ABC: Path  4 --     219 : 2    2 sg13g2_xnor2_1  A =  14.52  Df = 530.6 -116.0 ps  S = 112.3 ps  Cin =  5.4 ff  Cout =   8.7 ff  Cmax = 300.0 ff  G =  158  
+ABC: Path  5 --     220 : 2    2 sg13g2_xor2_1   A =  14.52  Df = 683.1 -147.0 ps  S =  97.0 ps  Cin =  5.4 ff  Cout =   8.2 ff  Cmax = 300.0 ff  G =  148  
+ABC: Path  6 --     222 : 2    2 sg13g2_xnor2_1  A =  14.52  Df = 823.7  -64.8 ps  S = 111.0 ps  Cin =  5.4 ff  Cout =   8.7 ff  Cmax = 300.0 ff  G =  158  
+ABC: Path  7 --     223 : 2    3 sg13g2_xor2_1   A =  14.52  Df = 992.4 -103.5 ps  S = 120.5 ps  Cin =  5.4 ff  Cout =  11.0 ff  Cmax = 300.0 ff  G =  201  
+ABC: Path  8 --     227 : 2    3 sg13g2_xnor2_1  A =  14.52  Df =1150.5  -84.4 ps  S = 129.1 ps  Cin =  5.4 ff  Cout =  10.2 ff  Cmax = 300.0 ff  G =  180  
+ABC: Path  9 --     234 : 3    3 sg13g2_o21ai_1  A =   9.07  Df =1260.5  -47.8 ps  S = 139.7 ps  Cin =  3.3 ff  Cout =  10.1 ff  Cmax = 300.0 ff  G =  293  
+ABC: Path 10 --     290 : 3    2 sg13g2_o21ai_1  A =   9.07  Df =1400.7  -24.4 ps  S = 101.3 ps  Cin =  3.3 ff  Cout =   5.9 ff  Cmax = 300.0 ff  G =  178  
+ABC: Path 11 --     292 : 2    4 sg13g2_nand2_1  A =   7.26  Df =1486.6  -13.6 ps  S =  90.9 ps  Cin =  2.9 ff  Cout =  12.5 ff  Cmax = 300.0 ff  G =  419  
+ABC: Path 12 --     448 : 5    4 sg13g2_a221oi_1 A =  14.52  Df =1753.3 -148.5 ps  S = 264.0 ps  Cin =  3.0 ff  Cout =  15.8 ff  Cmax = 300.0 ff  G =  525  
+ABC: Path 13 --     478 : 3    3 sg13g2_o21ai_1  A =   9.07  Df =1904.9 -132.0 ps  S = 136.5 ps  Cin =  3.3 ff  Cout =   9.4 ff  Cmax = 300.0 ff  G =  284  
+ABC: Path 14 --     492 : 3    1 sg13g2_a21oi_1  A =   9.07  Df =2007.5 -132.5 ps  S =  78.1 ps  Cin =  3.0 ff  Cout =   5.7 ff  Cmax = 300.0 ff  G =  188  
+ABC: Path 15 --     498 : 2    1 sg13g2_xnor2_1  A =  14.52  Df =2117.0 -137.2 ps  S =  69.4 ps  Cin =  5.4 ff  Cout =   3.5 ff  Cmax = 300.0 ff  G =   62  
+ABC: Path 16 --     500 : 3    1 sg13g2_o21ai_1  A =   9.07  Df =2194.2 -110.7 ps  S = 104.0 ps  Cin =  3.3 ff  Cout =   6.0 ff  Cmax = 300.0 ff  G =  181  
+ABC: Start-point = pi48 (\x_int4 [3]).  End-point = po19 ($auto$rtlil.cc:3580:MuxGate$1945).
+ABC: netlist                       : i/o =   60/   43  lat =    0  nd =   494  edge =   1162  area =4936.64  delay =16.00  lev = 16
+ABC: + write_blif /tmp/yosys-abc-aOURd8/output.blif 
+ABC:                                                                                
+
+114.1.2. Re-integrating ABC results.
+ABC RESULTS:     sg13g2_a21o_1 cells:       17
+ABC RESULTS:    sg13g2_a21oi_1 cells:       32
+ABC RESULTS:   sg13g2_a221oi_1 cells:        4
+ABC RESULTS:    sg13g2_a22oi_1 cells:       16
+ABC RESULTS:     sg13g2_and2_1 cells:        9
+ABC RESULTS:     sg13g2_and3_1 cells:        3
+ABC RESULTS:     sg13g2_and4_1 cells:        1
+ABC RESULTS:      sg13g2_inv_1 cells:       36
+ABC RESULTS:     sg13g2_mux2_1 cells:        8
+ABC RESULTS:    sg13g2_nand2_1 cells:       79
+ABC RESULTS:   sg13g2_nand2b_1 cells:       26
+ABC RESULTS:    sg13g2_nand3_1 cells:       15
+ABC RESULTS:   sg13g2_nand3b_1 cells:        1
+ABC RESULTS:    sg13g2_nand4_1 cells:        4
+ABC RESULTS:     sg13g2_nor2_1 cells:       27
+ABC RESULTS:    sg13g2_nor2b_1 cells:       30
+ABC RESULTS:     sg13g2_nor3_1 cells:       12
+ABC RESULTS:     sg13g2_nor4_1 cells:        2
+ABC RESULTS:    sg13g2_o21ai_1 cells:       62
+ABC RESULTS:      sg13g2_or2_1 cells:        6
+ABC RESULTS:      sg13g2_or3_1 cells:        2
+ABC RESULTS:    sg13g2_xnor2_1 cells:       62
+ABC RESULTS:     sg13g2_xor2_1 cells:       40
+ABC RESULTS:        internal signals:      551
+ABC RESULTS:           input signals:       60
+ABC RESULTS:          output signals:       43
+Removing temp directory.
+** cmd error: unknown command 'abc'
+(this is likely caused by using an alias defined in "abc.rc"
+without having this file in the current or parent directory)
+Removing global temp directory.
+
+115. Executing SETUNDEF pass (replace undef values with defined constants).
+
+116. Executing HILOMAP pass (mapping to constant drivers).
+
+117. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+118. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+Removed 0 unused cells and 654 unused wires.
+<suppressed ~2 debug messages>
+
+119. Executing INSBUF pass (insert buffer cells for connected wires).
+
+120. Executing CHECK pass (checking for obvious problems).
+Checking module classifier_top...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 21.1.2 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/tmp/ea627f1dee61499f8c2c70099a616413.lib -liberty /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/tmp/2cecd0f00efb460f9e0879d2a8cd8115.lib ",
+   "modules": {
+      "\\classifier_top": {
+         "num_wires":         504,
+         "num_wire_bits":     556,
+         "num_pub_wires":     10,
+         "num_pub_wire_bits": 62,
+         "num_ports":         10,
+         "num_port_bits":     62,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         537,
+         "num_submodules":       0,
+         "area":              7042.896000,
+         "sequential_area":    2106.518400,
+         "num_cells_by_type": {
+            "sg13g2_a21o_1": 17,
+            "sg13g2_a21oi_1": 32,
+            "sg13g2_a221oi_1": 4,
+            "sg13g2_a22oi_1": 16,
+            "sg13g2_and2_1": 9,
+            "sg13g2_and3_1": 3,
+            "sg13g2_and4_1": 1,
+            "sg13g2_dfrbpq_1": 43,
+            "sg13g2_inv_1": 36,
+            "sg13g2_mux2_1": 8,
+            "sg13g2_nand2_1": 79,
+            "sg13g2_nand2b_1": 26,
+            "sg13g2_nand3_1": 15,
+            "sg13g2_nand3b_1": 1,
+            "sg13g2_nand4_1": 4,
+            "sg13g2_nor2_1": 27,
+            "sg13g2_nor2b_1": 30,
+            "sg13g2_nor3_1": 12,
+            "sg13g2_nor4_1": 2,
+            "sg13g2_o21ai_1": 62,
+            "sg13g2_or2_1": 6,
+            "sg13g2_or3_1": 2,
+            "sg13g2_xnor2_1": 62,
+            "sg13g2_xor2_1": 40
+         }
+      }
+   },
+      "design": {
+         "num_wires":         504,
+         "num_wire_bits":     556,
+         "num_pub_wires":     10,
+         "num_pub_wire_bits": 62,
+         "num_ports":         10,
+         "num_port_bits":     62,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         537,
+         "num_submodules":       0,
+         "area":              7042.896000,
+         "sequential_area":    2106.518400,
+         "num_cells_by_type": {
+            "sg13g2_a21o_1": 17,
+            "sg13g2_a21oi_1": 32,
+            "sg13g2_a221oi_1": 4,
+            "sg13g2_a22oi_1": 16,
+            "sg13g2_and2_1": 9,
+            "sg13g2_and3_1": 3,
+            "sg13g2_and4_1": 1,
+            "sg13g2_dfrbpq_1": 43,
+            "sg13g2_inv_1": 36,
+            "sg13g2_mux2_1": 8,
+            "sg13g2_nand2_1": 79,
+            "sg13g2_nand2b_1": 26,
+            "sg13g2_nand3_1": 15,
+            "sg13g2_nand3b_1": 1,
+            "sg13g2_nand4_1": 4,
+            "sg13g2_nor2_1": 27,
+            "sg13g2_nor2b_1": 30,
+            "sg13g2_nor3_1": 12,
+            "sg13g2_nor4_1": 2,
+            "sg13g2_o21ai_1": 62,
+            "sg13g2_or2_1": 6,
+            "sg13g2_or3_1": 2,
+            "sg13g2_xnor2_1": 62,
+            "sg13g2_xor2_1": 40
+         }
+      }
+}
+
+121. Printing statistics.
+
+=== classifier_top ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      504        - wires
+      556        - wire bits
+       10        - public wires
+       62        - public wire bits
+       10        - ports
+       62        - port bits
+      537 7.04E+03 cells
+       17  215.914   sg13g2_a21o_1
+       32  290.304   sg13g2_a21oi_1
+        4   58.061   sg13g2_a221oi_1
+       16  173.578   sg13g2_a22oi_1
+        9   81.648   sg13g2_and2_1
+        3   38.102   sg13g2_and3_1
+        1   14.515   sg13g2_and4_1
+       43 2.11E+03   sg13g2_dfrbpq_1
+       36  195.955   sg13g2_inv_1
+        8  145.152   sg13g2_mux2_1
+       79   573.35   sg13g2_nand2_1
+       26  235.872   sg13g2_nand2b_1
+       15   136.08   sg13g2_nand3_1
+        1   12.701   sg13g2_nand3b_1
+        4   43.546   sg13g2_nand4_1
+       27  195.955   sg13g2_nor2_1
+       30   272.16   sg13g2_nor2b_1
+       12  108.864   sg13g2_nor3_1
+        2   21.773   sg13g2_nor4_1
+       62  562.464   sg13g2_o21ai_1
+        6   54.432   sg13g2_or2_1
+        2   25.402   sg13g2_or3_1
+       62  899.942   sg13g2_xnor2_1
+       40  580.608   sg13g2_xor2_1
+
+   Chip area for module '\classifier_top': 7042.896000
+     of which used for sequential elements: 2106.518400 (29.91%)
+
+122. Executing Verilog backend.
+Dumping module `\classifier_top'.
+
+123. Executing JSON backend.

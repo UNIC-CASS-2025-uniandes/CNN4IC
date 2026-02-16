@@ -1,0 +1,299 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 21.1.2 -fPIC -O3)
+
+1. Executing Verilog-2005 frontend: /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/tmp/3a11153bc9c349f9a0af958cabd5d8e1.bb.v
+Parsing SystemVerilog input from `/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/tmp/3a11153bc9c349f9a0af958cabd5d8e1.bb.v' to AST representation.
+verilog frontend filename /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/tmp/3a11153bc9c349f9a0af958cabd5d8e1.bb.v
+Generating RTLIL representation for module `\sg13g2_a21o_1'.
+Generating RTLIL representation for module `\sg13g2_a21o_2'.
+Generating RTLIL representation for module `\sg13g2_a21oi_1'.
+Generating RTLIL representation for module `\sg13g2_a21oi_2'.
+Generating RTLIL representation for module `\sg13g2_a221oi_1'.
+Generating RTLIL representation for module `\sg13g2_a22oi_1'.
+Generating RTLIL representation for module `\sg13g2_and2_1'.
+Generating RTLIL representation for module `\sg13g2_and2_2'.
+Generating RTLIL representation for module `\sg13g2_and3_1'.
+Generating RTLIL representation for module `\sg13g2_and3_2'.
+Generating RTLIL representation for module `\sg13g2_and4_1'.
+Generating RTLIL representation for module `\sg13g2_and4_2'.
+Generating RTLIL representation for module `\sg13g2_antennanp'.
+Generating RTLIL representation for module `\sg13g2_buf_1'.
+Generating RTLIL representation for module `\sg13g2_buf_16'.
+Generating RTLIL representation for module `\sg13g2_buf_2'.
+Generating RTLIL representation for module `\sg13g2_buf_4'.
+Generating RTLIL representation for module `\sg13g2_buf_8'.
+Generating RTLIL representation for module `\sg13g2_decap_4'.
+Generating RTLIL representation for module `\sg13g2_decap_8'.
+Generating RTLIL representation for module `\sg13g2_dfrbp_1'.
+Generating RTLIL representation for module `\sg13g2_dfrbp_2'.
+Generating RTLIL representation for module `\sg13g2_dfrbpq_1'.
+Generating RTLIL representation for module `\sg13g2_dfrbpq_2'.
+Generating RTLIL representation for module `\sg13g2_dlhq_1'.
+Generating RTLIL representation for module `\sg13g2_dlhr_1'.
+Generating RTLIL representation for module `\sg13g2_dlhrq_1'.
+Generating RTLIL representation for module `\sg13g2_dllr_1'.
+Generating RTLIL representation for module `\sg13g2_dllrq_1'.
+Generating RTLIL representation for module `\sg13g2_dlygate4sd1_1'.
+Generating RTLIL representation for module `\sg13g2_dlygate4sd2_1'.
+Generating RTLIL representation for module `\sg13g2_dlygate4sd3_1'.
+Generating RTLIL representation for module `\sg13g2_ebufn_2'.
+Generating RTLIL representation for module `\sg13g2_ebufn_4'.
+Generating RTLIL representation for module `\sg13g2_ebufn_8'.
+Generating RTLIL representation for module `\sg13g2_einvn_2'.
+Generating RTLIL representation for module `\sg13g2_einvn_4'.
+Generating RTLIL representation for module `\sg13g2_einvn_8'.
+Generating RTLIL representation for module `\sg13g2_fill_1'.
+Generating RTLIL representation for module `\sg13g2_fill_2'.
+Generating RTLIL representation for module `\sg13g2_fill_4'.
+Generating RTLIL representation for module `\sg13g2_fill_8'.
+Generating RTLIL representation for module `\sg13g2_inv_1'.
+Generating RTLIL representation for module `\sg13g2_inv_16'.
+Generating RTLIL representation for module `\sg13g2_inv_2'.
+Generating RTLIL representation for module `\sg13g2_inv_4'.
+Generating RTLIL representation for module `\sg13g2_inv_8'.
+Generating RTLIL representation for module `\sg13g2_lgcp_1'.
+Generating RTLIL representation for module `\sg13g2_mux2_1'.
+Generating RTLIL representation for module `\sg13g2_mux2_2'.
+Generating RTLIL representation for module `\sg13g2_mux4_1'.
+Generating RTLIL representation for module `\sg13g2_nand2_1'.
+Generating RTLIL representation for module `\sg13g2_nand2_2'.
+Generating RTLIL representation for module `\sg13g2_nand2b_1'.
+Generating RTLIL representation for module `\sg13g2_nand2b_2'.
+Generating RTLIL representation for module `\sg13g2_nand3_1'.
+Generating RTLIL representation for module `\sg13g2_nand3b_1'.
+Generating RTLIL representation for module `\sg13g2_nand4_1'.
+Generating RTLIL representation for module `\sg13g2_nor2_1'.
+Generating RTLIL representation for module `\sg13g2_nor2_2'.
+Generating RTLIL representation for module `\sg13g2_nor2b_1'.
+Generating RTLIL representation for module `\sg13g2_nor2b_2'.
+Generating RTLIL representation for module `\sg13g2_nor3_1'.
+Generating RTLIL representation for module `\sg13g2_nor3_2'.
+Generating RTLIL representation for module `\sg13g2_nor4_1'.
+Generating RTLIL representation for module `\sg13g2_nor4_2'.
+Generating RTLIL representation for module `\sg13g2_o21ai_1'.
+Generating RTLIL representation for module `\sg13g2_or2_1'.
+Generating RTLIL representation for module `\sg13g2_or2_2'.
+Generating RTLIL representation for module `\sg13g2_or3_1'.
+Generating RTLIL representation for module `\sg13g2_or3_2'.
+Generating RTLIL representation for module `\sg13g2_or4_1'.
+Generating RTLIL representation for module `\sg13g2_or4_2'.
+Generating RTLIL representation for module `\sg13g2_sdfbbp_1'.
+Generating RTLIL representation for module `\sg13g2_sdfrbp_1'.
+Generating RTLIL representation for module `\sg13g2_sdfrbp_2'.
+Generating RTLIL representation for module `\sg13g2_sdfrbpq_1'.
+Generating RTLIL representation for module `\sg13g2_sdfrbpq_2'.
+Generating RTLIL representation for module `\sg13g2_sighold'.
+Generating RTLIL representation for module `\sg13g2_slgcp_1'.
+Generating RTLIL representation for module `\sg13g2_tiehi'.
+Generating RTLIL representation for module `\sg13g2_tielo'.
+Generating RTLIL representation for module `\sg13g2_xnor2_1'.
+Generating RTLIL representation for module `\sg13g2_xor2_1'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/tmp/cd922eb78a70448ba01d21eb633fffab.bb.v
+Parsing SystemVerilog input from `/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/tmp/cd922eb78a70448ba01d21eb633fffab.bb.v' to AST representation.
+verilog frontend filename /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/runs/RUN_2026-02-08_21-25-15/tmp/cd922eb78a70448ba01d21eb633fffab.bb.v
+Generating RTLIL representation for module `\sg13g2_Corner'.
+Generating RTLIL representation for module `\sg13g2_Filler1000'.
+Generating RTLIL representation for module `\sg13g2_Filler10000'.
+Generating RTLIL representation for module `\sg13g2_Filler200'.
+Generating RTLIL representation for module `\sg13g2_Filler2000'.
+Generating RTLIL representation for module `\sg13g2_Filler400'.
+Generating RTLIL representation for module `\sg13g2_Filler4000'.
+Generating RTLIL representation for module `\sg13g2_IOPadAnalog'.
+Generating RTLIL representation for module `\sg13g2_IOPadIOVdd'.
+Generating RTLIL representation for module `\sg13g2_IOPadIOVss'.
+Generating RTLIL representation for module `\sg13g2_IOPadIn'.
+Generating RTLIL representation for module `\sg13g2_IOPadInOut16mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadInOut30mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadInOut4mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadOut16mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadOut30mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadOut4mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadTriOut16mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadTriOut30mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadTriOut4mA'.
+Generating RTLIL representation for module `\sg13g2_IOPadVdd'.
+Generating RTLIL representation for module `\sg13g2_IOPadVss'.
+Successfully finished Verilog frontend.
+wtaf
+
+3. Executing Verilog-2005 frontend: /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_top.v
+Parsing SystemVerilog input from `/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_top.v' to AST representation.
+verilog frontend filename /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_top.v
+Storing AST representation for module `$abstract\classifier_top'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_mac_argmax_modular.v
+Parsing SystemVerilog input from `/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_mac_argmax_modular.v' to AST representation.
+verilog frontend filename /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/classifier_mac_argmax_modular.v
+Storing AST representation for module `$abstract\classifier_mac_argmax_modular'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/mul_int4_int8_to_int12.v
+Parsing SystemVerilog input from `/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/mul_int4_int8_to_int12.v' to AST representation.
+verilog frontend filename /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/mul_int4_int8_to_int12.v
+Storing AST representation for module `$abstract\mul_int4_int8_to_int12'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/add_int12_int20_to_int20.v
+Parsing SystemVerilog input from `/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/add_int12_int20_to_int20.v' to AST representation.
+verilog frontend filename /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/add_int12_int20_to_int20.v
+Storing AST representation for module `$abstract\add_int12_int20_to_int20'.
+Successfully finished Verilog frontend.
+
+7. Executing Verilog-2005 frontend: /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/cmp_gt_int20.v
+Parsing SystemVerilog input from `/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/cmp_gt_int20.v' to AST representation.
+verilog frontend filename /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/cmp_gt_int20.v
+Storing AST representation for module `$abstract\cmp_gt_int20'.
+Successfully finished Verilog frontend.
+
+8. Executing Verilog-2005 frontend: /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v
+Parsing SystemVerilog input from `/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v' to AST representation.
+verilog frontend filename /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v
+Storing AST representation for module `$abstract\reg_int20_clr_load'.
+Successfully finished Verilog frontend.
+
+9. Executing Verilog-2005 frontend: /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v
+Parsing SystemVerilog input from `/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v' to AST representation.
+verilog frontend filename /home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v
+Storing AST representation for module `$abstract\reg_intN_clr_load'.
+Successfully finished Verilog frontend.
+
+10. Executing HIERARCHY pass (managing design hierarchy).
+
+11. Executing AST frontend in derive mode using pre-parsed AST for module `\classifier_top'.
+Generating RTLIL representation for module `\classifier_top'.
+
+11.1. Analyzing design hierarchy..
+Top module:  \classifier_top
+Parameter \CLASS_BITS = 3
+
+11.2. Executing AST frontend in derive mode using pre-parsed AST for module `\classifier_mac_argmax_modular'.
+Parameter \CLASS_BITS = 3
+Generating RTLIL representation for module `$paramod\classifier_mac_argmax_modular\CLASS_BITS=s32'00000000000000000000000000000011'.
+
+11.3. Analyzing design hierarchy..
+Top module:  \classifier_top
+Used module:     $paramod\classifier_mac_argmax_modular\CLASS_BITS=s32'00000000000000000000000000000011
+Parameter \N = 3
+
+11.4. Executing AST frontend in derive mode using pre-parsed AST for module `\reg_intN_clr_load'.
+Parameter \N = 3
+Generating RTLIL representation for module `$paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011'.
+
+11.5. Executing AST frontend in derive mode using pre-parsed AST for module `\reg_int20_clr_load'.
+Generating RTLIL representation for module `\reg_int20_clr_load'.
+
+11.6. Executing AST frontend in derive mode using pre-parsed AST for module `\cmp_gt_int20'.
+Generating RTLIL representation for module `\cmp_gt_int20'.
+
+11.7. Executing AST frontend in derive mode using pre-parsed AST for module `\add_int12_int20_to_int20'.
+Generating RTLIL representation for module `\add_int12_int20_to_int20'.
+
+11.8. Executing AST frontend in derive mode using pre-parsed AST for module `\mul_int4_int8_to_int12'.
+Generating RTLIL representation for module `\mul_int4_int8_to_int12'.
+
+11.9. Analyzing design hierarchy..
+Top module:  \classifier_top
+Used module:     $paramod\classifier_mac_argmax_modular\CLASS_BITS=s32'00000000000000000000000000000011
+Used module:         $paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011
+Used module:         \reg_int20_clr_load
+Used module:         \cmp_gt_int20
+Used module:         \add_int12_int20_to_int20
+Used module:         \mul_int4_int8_to_int12
+
+11.10. Analyzing design hierarchy..
+Top module:  \classifier_top
+Used module:     $paramod\classifier_mac_argmax_modular\CLASS_BITS=s32'00000000000000000000000000000011
+Used module:         $paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011
+Used module:         \reg_int20_clr_load
+Used module:         \cmp_gt_int20
+Used module:         \add_int12_int20_to_int20
+Used module:         \mul_int4_int8_to_int12
+Removing unused module `$abstract\reg_intN_clr_load'.
+Removing unused module `$abstract\reg_int20_clr_load'.
+Removing unused module `$abstract\cmp_gt_int20'.
+Removing unused module `$abstract\add_int12_int20_to_int20'.
+Removing unused module `$abstract\mul_int4_int8_to_int12'.
+Removing unused module `$abstract\classifier_mac_argmax_modular'.
+Removing unused module `$abstract\classifier_top'.
+Removed 7 unused modules.
+Renaming module classifier_top to classifier_top.
+
+12. Executing PROC pass (convert processes to netlists).
+
+12.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+12.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:17$6 in module reg_int20_clr_load.
+Marked 2 switch rules as full_case in process $proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:12$4 in module $paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011.
+Removed a total of 0 dead cases.
+
+12.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+12.4. Executing PROC_INIT pass (extract init attributes).
+
+12.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\reg_int20_clr_load.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:17$6'.
+Found async reset \rst_n in `$paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:12$4'.
+
+12.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~4 debug messages>
+
+12.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\reg_int20_clr_load.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:17$6'.
+     1/1: $0\q[19:0]
+Creating decoders for process `$paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:12$4'.
+     1/1: $0\q[2:0]
+
+12.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+12.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\reg_int20_clr_load.\q' using process `\reg_int20_clr_load.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:17$6'.
+  created $adff cell `$procdff$25' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011.\q' using process `$paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:12$4'.
+  created $adff cell `$procdff$30' with positive edge clock and positive level reset.
+
+12.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+12.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\reg_int20_clr_load.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:17$6'.
+Removing empty process `reg_int20_clr_load.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_int20_clr_load.v:17$6'.
+Found and cleaned up 2 empty switches in `$paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:12$4'.
+Removing empty process `$paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011.$proc$/home/designer/shared/hdl_projects/capa_clasificacion/libreline/classifier_top/src/reg_intN_clr_load.v:12$4'.
+Cleaned up 4 empty switches.
+
+12.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module classifier_top.
+Optimizing module add_int12_int20_to_int20.
+Optimizing module cmp_gt_int20.
+Optimizing module reg_int20_clr_load.
+<suppressed ~2 debug messages>
+Optimizing module $paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011.
+<suppressed ~2 debug messages>
+Optimizing module $paramod\classifier_mac_argmax_modular\CLASS_BITS=s32'00000000000000000000000000000011.
+Optimizing module mul_int4_int8_to_int12.
+
+13. Executing FLATTEN pass (flatten design).
+Deleting now unused module add_int12_int20_to_int20.
+Deleting now unused module cmp_gt_int20.
+Deleting now unused module reg_int20_clr_load.
+Deleting now unused module $paramod\reg_intN_clr_load\N=s32'00000000000000000000000000000011.
+Deleting now unused module $paramod\classifier_mac_argmax_modular\CLASS_BITS=s32'00000000000000000000000000000011.
+Deleting now unused module mul_int4_int8_to_int12.
+<suppressed ~7 debug messages>
+
+14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \classifier_top..
+Removed 13 unused cells and 62 unused wires.
+<suppressed ~53 debug messages>

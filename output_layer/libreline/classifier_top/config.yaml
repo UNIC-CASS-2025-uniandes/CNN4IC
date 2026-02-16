@@ -1,0 +1,12 @@
+DESIGN_NAME: classifier_top
+VERILOG_FILES:
+  - dir::src/classifier_top.v
+  - dir::src/classifier_mac_argmax_modular.v
+  - dir::src/mul_int4_int8_to_int12.v
+  - dir::src/add_int12_int20_to_int20.v
+  - dir::src/cmp_gt_int20.v
+  - dir::src/reg_int20_clr_load.v
+  - dir::src/reg_intN_clr_load.v
+
+CLOCK_PORT: clk
+CLOCK_PERIOD: 10   # ns, ajusta si quieres (ej. 20ns = 50MHz)
